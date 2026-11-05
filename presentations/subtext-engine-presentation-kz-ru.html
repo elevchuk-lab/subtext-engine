@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUBTEXT ENGINE — Корпоративная презентация (Казахстан)</title>
+<style>
+  :root {
+    --bg-dark: #07090e;
+    --card-bg: #0e131d;
+    --card-border: #1a2333;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent-emerald: #00f59b;
+    --accent-cyan: #00d4ff;
+    --accent-gold: #f59e0b;
+    --accent-ruby: #ff2a5f;
+    --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "SF Mono", "Menlo", monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Presentation Container */
+  .deck-container {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    padding: 80px 100px;
+    background: radial-gradient(circle at 85% 15%, rgba(0, 245, 155, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(0, 212, 255, 0.04) 0%, transparent 45%),
+                var(--bg-dark);
+    border-bottom: 2px solid #161f30;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+  }
+
+  /* Watermark Grid */
+  .slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Header */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 24px;
+    margin-bottom: 30px;
+  }
+
+  .slide-badge {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent-emerald);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 245, 155, 0.08);
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 245, 155, 0.2);
+    margin-bottom: 12px;
+  }
+
+  .slide-title {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+    line-height: 1.15;
+  }
+
+  .slide-subtitle {
+    font-size: 20px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  .slide-telemetry {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: right;
+  }
+
+  .slide-telemetry .status {
+    color: var(--accent-cyan);
+    font-weight: 600;
+  }
+
+  /* Main Body */
+  .slide-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Grid Layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .card.highlight {
+    border-color: rgba(0, 245, 155, 0.4);
+    background: linear-gradient(180deg, rgba(0, 245, 155, 0.04) 0%, var(--card-bg) 100%);
+  }
+
+  .card.highlight-cyan {
+    border-color: rgba(0, 212, 255, 0.4);
+    background: linear-gradient(180deg, rgba(0, 212, 255, 0.04) 0%, var(--card-bg) 100%);
+  }
+
+  .card.highlight-ruby {
+    border-color: rgba(255, 42, 95, 0.4);
+    background: linear-gradient(180deg, rgba(255, 42, 95, 0.04) 0%, var(--card-bg) 100%);
+  }
+
+  .card-header-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .card-desc {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .card-metric {
+    font-family: var(--font-mono);
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--accent-emerald);
+    margin: 12px 0;
+  }
+
+  /* High-Stakes Table */
+  .table-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 15px;
+  }
+
+  th {
+    background: #131a29;
+    color: var(--accent-emerald);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 16px 20px;
+    border-bottom: 2px solid #1c273c;
+  }
+
+  td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #162032;
+    color: #cbd5e1;
+    vertical-align: middle;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .badge-sector {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+  }
+
+  .badge-stake {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--accent-gold);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+  }
+
+  /* Footer */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--card-border);
+    padding-top: 20px;
+    margin-top: 20px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .slide-footer a {
+    color: var(--accent-emerald);
+    text-decoration: none;
+  }
+
+  /* Hero Layout for Slide 1 */
+  .hero-slide {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .hero-title {
+    font-size: 68px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #ffffff 40%, #00f59b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px 0;
+  }
+
+  .hero-lead {
+    font-size: 26px;
+    color: #cbd5e1;
+    max-width: 1200px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .stat-box {
+    background: rgba(14, 19, 29, 0.7);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 24px;
+    border-left: 4px solid var(--accent-emerald);
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .stat-label {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  /* Keyboard & Navigation UI (Hidden on Print) */
+  .nav-controls {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    display: flex;
+    gap: 12px;
+    z-index: 100;
+  }
+
+  .nav-btn {
+    background: #111827;
+    border: 1px solid #374151;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: var(--accent-emerald);
+    color: #000;
+    border-color: var(--accent-emerald);
+  }
+
+  @media print {
+    .nav-controls {
+      display: none !important;
+    }
+    .slide {
+      border-bottom: none;
+      page-break-after: always;
+      height: 100vh;
+      width: 100vw;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck-container">
+
+  <!-- ==================== СЛАЙД 1: ТИТУЛЬНЫЙ ==================== -->
+  <section class="slide" id="slide-1">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div>
+          <span class="slide-badge">B2B STRATEGIC BRIEFING // РЕСПУБЛИКА КАЗАХСТАН</span>
+        </div>
+        <div class="slide-telemetry">
+          SYSTEM CLASSIFICATION: <span class="status">HIGH-STAKES GOVERNANCE</span><br>
+          CERN ZENODO RECORD // ORCID VALIDATED
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="hero-slide">
+          <span style="font-family: var(--font-mono); color: var(--accent-cyan); font-size: 20px; letter-spacing: 0.15em;">
+            [ ПСИХОЛИНГВИСТИЧЕСКИЙ РЕНТГЕН КОРПОРАТИВНОГО ТЕКСТА ]
+          </span>
+          <h1 class="hero-title">SUBTEXT ENGINE</h1>
+          <p class="hero-lead">
+            Судебная психолингвистическая система детекции скрытых мотивов, скрытого давления, рефлексивного управления и фальсификации показаний для корпоративного сектора, квазигосхолдингов и юридической элиты Казахстана.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-box">
+              <div class="stat-value">21</div>
+              <div class="stat-label">Фундаментальный научный трактат (ФБР, ФРГ, РАН, МГУ, Кембридж)</div>
+            </div>
+            <div class="stat-box" style="border-left-color: var(--accent-cyan);">
+              <div class="stat-value">8</div>
+              <div class="stat-label">Мировых разведывательных и судебных дисциплин аудита речи</div>
+            </div>
+            <div class="stat-box" style="border-left-color: var(--accent-gold);">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Защита от утечки данных: развертывание в закрытом контуре (On-Premise)</div>
+            </div>
+            <div class="stat-box" style="border-left-color: var(--accent-ruby);">
+              <div class="stat-value">0%</div>
+              <div class="stat-label">«AI-галлюцинаций»: опора на верифицированные критерии BGH и CBCA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div>Разработано: <strong>Yevgeniy Levchuk</strong> (elevchuk-lab)</div>
+        <div>Международный DOI: <strong>10.5281/zenodo.subtext</strong> | Стандарт ISO 27729 (ORCID)</div>
+        <div>Слайд 01 / 08</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== СЛАЙД 2: ПРОБЛЕМА ==================== -->
+  <section class="slide" id="slide-2">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div>
+          <span class="slide-badge">СПЕЦИФИКА РЫНКА РК // АНАЛИЗ УЯЗВИМОСТЕЙ</span>
+          <h2 class="slide-title">Почему 95% проверок в Казахстане пропускают угрозу?</h2>
+          <p class="slide-subtitle">Цена доверия поверхностному содержанию документов в высококонтекстной деловой среде</p>
+        </div>
+        <div class="slide-telemetry">
+          VULNERABILITY LEVEL: <span style="color: var(--accent-ruby); font-weight: 700;">CRITICAL</span><br>
+          LOCAL CONTEXT: HIGH-CONTEXT DISCOURSE
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card highlight-ruby">
+            <span class="card-header-icon">🛡️</span>
+            <h3 class="card-title">«Канцелярит» как щит от ответственности</h3>
+            <p class="card-desc">
+              В квазигоссекторе и корпоративных структурах РК чиновники и топ-менеджеры виртуозно используют безличные пассивные конструкции (<em>«было принято решение», «представляется целесообразным»</em>) для сокрытия фактов саботажа, вывода средств или лоббирования интересов аффилированных лиц. Традиционный аудит видит «правильный протокол», пропуская институциональное уклонение.
+            </p>
+          </div>
+
+          <div class="card highlight-gold">
+            <span class="card-header-icon">🎭</span>
+            <h3 class="card-title">Высококонтекстная культура и скрытое давление</h3>
+            <p class="card-desc">
+              Казахстанский бизнес построен на уважительной непрямой коммуникации (Indirect Discourse), сложных клановых и неформальных балансах сил. Прямой шантаж или агрессия здесь маскируются под «партнерскую заботу», субординационные экивоки и псевдолояльность. Обычные LLM (ChatGPT, Copilot) слепы к восточной и евразийской специфике намеков.
+            </p>
+          </div>
+
+          <div class="card highlight-cyan">
+            <span class="card-header-icon">⚔️</span>
+            <h3 class="card-title">Трансграничное рефлексивное управление</h3>
+            <p class="card-desc">
+              На переговорах с контрагентами из Китая, Ближнего Востока, Европы и РФ казахстанские холдинги часто подвергаются изощренным манипуляциям (по Лефевру и Сунь-Цзы): искусственный дефицит времени, фальшивые альтернативы и навязывание искаженной картины мира. Результат — подписанные кабальные контракты и проигрыши в арбитражах.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div>Subtext Engine: переход от анализа <em>«что сказано»</em> к анализу <em>«почему и как сформулировано»</em></div>
+        <div>Слайд 02 / 08</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== СЛАЙД 3: АРХИТЕКТУРА И МЕТОДОЛОГИЯ ==================== -->
+  <section class="slide" id="slide-3">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div>
+          <span class="slide-badge">НАУЧНЫЙ ФУНДАМЕНТ // 8 ДИСЦИПЛИН</span>
+          <h2 class="slide-title">21 академический трактат судебной валидности</h2>
+          <p class="slide-subtitle">Синтез мировых криминалистических методик, признаваемых Верховными Судами Европы и судебными экспертизами</p>
+        </div>
+        <div class="slide-telemetry">
+          EVIDENTIARY STANDARD: <span class="status">BGH 1999 / DAUBERT COMPLIANT</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-4">
+          <div class="card">
+            <div style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 13px; font-weight: 700; margin-bottom: 8px;">01 // АНАЛИЗ ПОКАЗАНИЙ</div>
+            <h4 class="card-title" style="font-size: 18px;">Statement Analysis (FBI / UK)</h4>
+            <p class="card-desc" style="font-size: 14px;">
+              Баланс частей (20/50/30), пропуск местоимений («я»), глаголы удержания процесса, речевые маркеры заученности и временные провалы (Adams, McClish, Coulthard, Olsson).
+            </p>
+          </div>
+
+          <div class="card">
+            <div style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 13px; font-weight: 700; margin-bottom: 8px;">02 // СУДЕБНАЯ ПСИХОЛОГИЯ</div>
+            <h4 class="card-title" style="font-size: 18px;">CBCA & Reality Monitoring</h4>
+            <p class="card-desc" style="font-size: 14px;">
+              19 критериев Ундойча (стандарт Верховного Суда ФРГ BGH 1999). Анализ сенсорных деталей пережитого опыта в противовес сконструированным схемам (Steller, Köhnken, Vrij).
+            </p>
+          </div>
+
+          <div class="card">
+            <div style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 13px; font-weight: 700; margin-bottom: 8px;">03 // ОТЕЧЕСТВЕННАЯ ШКОЛА</div>
+            <h4 class="card-title" style="font-size: 18px;">Московская школа & Лингвокриминалистика</h4>
+            <p class="card-desc" style="font-size: 14px;">
+              Теория речевой деятельности Леонтьева-Тарасова, предикатные иерархии Дридзе, анализ скрытых смыслов Стернина, Баранова и методы допроса Челпанова.
+            </p>
+          </div>
+
+          <div class="card">
+            <div style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 13px; font-weight: 700; margin-bottom: 8px;">04 // КИБЕРНЕТИКА И ЗАЩИТА</div>
+            <h4 class="card-title" style="font-size: 18px;">Рефлексивный контроль & Деструктивное влияние</h4>
+            <p class="card-desc" style="font-size: 14px;">
+              Алгебра рефлексивных полиномов Владимира Лефевра, матрица принудительного контроля B.I.T.E. Хассана и манипулятивные критерии Бидермана (UN/Amnesty).
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px; background: rgba(0, 245, 155, 0.04); border: 1px solid rgba(0, 245, 155, 0.2); border-radius: 8px; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-size: 16px; color: #fff;">
+            <strong>Кросс-лингвистическая адаптация:</strong> Алгоритм откалиброван под специфику русскоязычного и казахстанского делового синтаксиса (Pro-Drop, страдательный залог, модальные частицы).
+          </div>
+          <span class="slide-badge" style="margin: 0;">21 TREATISE ENGINE</span>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div>Научная рецензия и регистрация: CERN Zenodo DataCite Archive</div>
+        <div>Слайд 03 / 08</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== СЛАЙД 4: КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ В РК ==================== -->
+  <section class="slide" id="slide-4">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div>
+          <span class="slide-badge">ПРИКЛАДНАЯ ЦЕННОСТЬ В РК // СЕКТОРА ВНЕДРЕНИЯ</span>
+          <h2 class="slide-title">4 стратегических контура защиты бизнеса</h2>
+          <p class="slide-subtitle">Где ошибки в оценке намерений и достоверности стоят миллиарды тенге</p>
+        </div>
+        <div class="slide-telemetry">
+          SECTOR ALIGNMENT: <span class="status">ENTERPRISE & LEGAL KZ</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card highlight">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 class="card-title" style="margin: 0;">1. Службы безопасности, Кредитные комитеты и Комплаенс</h3>
+              <span class="badge-sector">БАНКИ И ФИНТЕХ</span>
+            </div>
+            <p class="card-desc">
+              • <strong>Крупное корпоративное кредитование:</strong> психолингвистический аудит бизнес-планов, писем поручителей и пояснений заемщиков на предмет утаивания критических долговых обязательств.<br>
+              • <strong>Внутренние расследования (Fraud Detection):</strong> автоматизированный анализ объяснительных записок сотрудников при хищениях, утечках клиентских баз и злоупотреблении полномочиями.<br>
+              • <strong>Скрининг топ-менеджмента:</strong> оценка лояльности и выявление скрытой аффилированности кандидатов на ключевые посты.
+            </p>
+          </div>
+
+          <div class="card highlight-cyan">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 class="card-title" style="margin: 0;">2. Тендерные комитеты и Антикоррупционный комплаенс</h3>
+              <span class="badge-sector">КВАЗИГОССЕКТОР И ГМК</span>
+            </div>
+            <p class="card-desc">
+              • <strong>Аудит конкурсной документации:</strong> выявление негласного сговора поставщиков (Terminology Mutation, совпадение скрытых синтаксических паттернов в заявках якобы независимых участников).<br>
+              • <strong>Горячие линии доверия (Whistleblowing):</strong> фильтрация добросовестных сигналов об откатах от заказных анонимных оговоров конкурентов по критериям CBCA.<br>
+              • <strong>Аудит субподрядчиков:</strong> верификация отчетов о фактически выполненных работах на крупных месторождениях и стройках.
+            </p>
+          </div>
+
+          <div class="card highlight-gold">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 class="card-title" style="margin: 0;">3. Международный арбитраж и Судебная защита</h3>
+              <span class="badge-sector">СУДЫ И МФЦА (AIFC)</span>
+            </div>
+            <p class="card-desc">
+              • <strong>Подготовка к процессам в суде МФЦА (AIFC Court & IAC):</strong> судебная лингвистическая экспертиза контрактов, заключенных по английскому праву (Common Law).<br>
+              • <strong>Анализ свидетельских показаний:</strong> выявление срежиссированных показаний свидетелей оппонента, признаков давления со стороны следствия или третьих лиц.<br>
+              • <strong>Защита деловой репутации (Defamation):</strong> доказывание наличия/отсутствия скрытых утверждений о фактах по методологии проф. Стернина и Баранова.
+            </p>
+          </div>
+
+          <div class="card highlight-ruby">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 class="card-title" style="margin: 0;">4. Сделки M&A, СП и Стратегические переговоры</h3>
+              <span class="badge-sector">ИНВЕСТИЦИОННЫЕ ХОЛДИНГИ</span>
+            </div>
+            <p class="card-desc">
+              • <strong>Защита от блефа зарубежных партнеров:</strong> скрытый анализ стенограмм и протоколов переговоров с китайскими, турецкими и европейскими инвесторами.<br>
+              • <strong>Аудит Term Sheet и SHA:</strong> выявление скрытых двусмысленностей, дающих контрагенту право недружественного поглощения или блокировки активов.<br>
+              • <strong>Разведка переговорных позиций (Shadow Negotiation):</strong> определение истинной границы уступок оппонента по маркерам проседания когнитивной нагрузки (Aldert Vrij).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div>Фокус: исключение человеческого фактора и субъективных симпатий при принятии решений</div>
+        <div>Слайд 04 / 08</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== СЛАЙД 5: ТОП-20 КОМПАНИЙ КАЗАХСТАНА ==================== -->
+  <section class="slide" id="slide-5">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div>
+          <span class="slide-badge">ЦЕЛЕВАЯ АУДИТОРИЯ // КАРТА КОРПОРАТИВНОГО РЫНКА РК</span>
+          <h2 class="slide-title">ТОП-20 стратегических предприятий Казахстана</h2>
+          <p class="slide-subtitle">Точки входа, лица принимающие решения (ЛПР) и закрываемые бизнес-риски</p>
+        </div>
+        <div class="slide-telemetry">
+          MARKET COVERAGE: <span class="status">TIER-1 ENTERPRISE KZ</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 22%;">Отрасль / Корпорация</th>
+                <th style="width: 22%;">Ключевой ЛПР (Точка контакта)</th>
+                <th style="width: 32%;">Критическая уязвимость и боль компании</th>
+                <th style="width: 24%;">Решаемая задача Subtext Engine</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Kaspi.kz / Halyk Bank / ForteBank / Freedom Finance</strong><br><span class="badge-sector">Банки & FinTech</span></td>
+                <td>Зампреды правления по рискам, Директора департаментов СБ, Руководители комплаенс-контроля</td>
+                <td>Фрод при выдаче синдицированных и бланковых кредитов; сговор внутренних риск-офицеров с заемщиками; утечки персональных данных.</td>
+                <td>Психолингвистический скрининг заемщиков, скоринг объяснительных при внутренних расследованиях хищений.</td>
+              </tr>
+              <tr>
+                <td><strong>АО «Самрук-Қазына» / «КазМунайГаз» / «Казатомпром»</strong><br><span class="badge-sector">Квазигоссектор & Нефтегаз</span></td>
+                <td>Омбудсмены, Службы комплаенс и антикоррупции, Управляющие директора по правовым вопросам</td>
+                <td>Сговор в процедурах закупок на сотни миллиардов тенге; бюрократический саботаж поручений руководства; фальсификация производственных отчетов.</td>
+                <td>Аудит тендерных досье на фиктивную конкуренцию; детекция намеренного ухода от ответственности в протоколах.</td>
+              </tr>
+              <tr>
+                <td><strong>ERG (Eurasian Resources Group) / KAZ Minerals / QazaqGaz</strong><br><span class="badge-sector">ГМК & Металлургия</span></td>
+                <td>Директора по безопасности активов, Генеральные юрисконсульты, Руководители внутреннего аудита</td>
+                <td>Саботаж техники безопасности на удаленных рудниках; приписки объемов вскрышных работ; фиктивные ЧП и кражи цветных металлов.</td>
+                <td>Криминалистический анализ объяснительных инженеров и начальников смен; аудит показаний при авариях.</td>
+              </tr>
+              <tr>
+                <td><strong>BI Group / Bazis-A / Lancaster Group</strong><br><span class="badge-sector">Девелопмент & Промышленность</span></td>
+                <td>Акционеры, Председатели СД, Директора по безопасности и контролю проектов</td>
+                <td>Хищения и откаты при закупках арматуры и бетона; скрытый сговор генподрядчиков с субподрядными бригадами; срыв сроков сдачи объектов.</td>
+                <td>Верификация переписки с субподрядчиками; выявление скрытой аффилированности прорабов с поставщиками.</td>
+              </tr>
+              <tr>
+                <td><strong>AIFC Court & IAC / Kinstellar / GRATA International / SIGNUM</strong><br><span class="badge-sector">Международный арбитраж & Big Law</span></td>
+                <td>Управляющие партнеры юридических фирм, Адвокаты коллегий, Арбитры МФЦА</td>
+                <td>Сложность разоблачения заказных лжесвидетельств в арбитражах Лондона и Астаны; неоднозначность толкования скрытых условий договоров.</td>
+                <td>Подготовка экспертных заключений для суда по критериям CBCA и анализу семантического подтекста (Sternin/Baranov).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div>Суммарная капитализация и оборот целевой группы: свыше $100 млрд | Прямой экономический эффект от предотвращения фрода</div>
+        <div>Слайд 05 / 08</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== СЛАЙД 6: РЕАЛЬНЫЙ КЕЙС ==================== -->
+  <section class="slide" id="slide-6">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div>
+          <span class="slide-badge">СУДЕБНО-ЛИНГВИСТИЧЕСКИЙ РАЗБОР // SHOW, DON'T TELL</span>
+          <h2 class="slide-title">Анатомия разоблачения: кейс промышленного саботажа</h2>
+          <p class="slide-subtitle">Сравнение восприятия текста человеком против детекции через Subtext Engine</p>
+        </div>
+        <div class="slide-telemetry">
+          CASE STUDY: <span class="status">KAZAKHSTAN MINING AUDIT</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card">
+            <span class="badge-stake">ТЕКСТ ОБЪЯСНИТЕЛЬНОЙ НАЧАЛЬНИКА СКЛАДА</span>
+            <div style="background: #080b11; border: 1px solid #1a2333; padding: 20px; border-radius: 8px; margin: 16px 0; font-style: italic; color: #e2e8f0; font-size: 15px; line-height: 1.6;">
+              «Я, начальник склада рудника, 14 числа находился на рабочем месте. Мы добросовестно выполняли отгрузку катодной меди согласно регламенту. Никаких нарушений лично мной допущено не было. Около 18:00 приехали сотрудники смены. Все документы были в полном порядке. Было принято решение отпустить партию, так как задержка повлекла бы срыв контракта. Я бы никогда не стал нарушать инструкции комбината, так как работаю здесь 12 лет».
+            </div>
+            <div style="color: #94a3b8; font-size: 14px;">
+              <strong>Вердикт обычного HR и поверхностного СБ:</strong><br>
+              «Сотрудник предан компании, переживает за сроки контракта, вину отрицает. Оснований для дисциплинарного взыскания нет».
+            </div>
+          </div>
+
+          <div class="card highlight-ruby">
+            <span class="slide-badge" style="background: rgba(255, 42, 95, 0.1); border-color: rgba(255, 42, 95, 0.3); color: var(--accent-ruby);">
+              ВЕРДИКТ СИСТЕМЫ SUBTEXT ENGINE
+            </span>
+            <div style="margin-top: 14px; font-size: 14px; color: #cbd5e1; line-height: 1.6;">
+              <p style="margin-bottom: 10px;">
+                🔴 <strong>1. Исчезновение местоимения «Я» (Pronoun Drop):</strong> Начав с персональной ответственности (<em>«Я находился»</em>), автор в критический момент переходит на коллективное безликое <em>«Мы выполняли»</em> и пассивное <em>«Было принято решение»</em>. Психологическое отчуждение от факта отгрузки.
+              </p>
+              <p style="margin-bottom: 10px;">
+                🔴 <strong>2. Нерельефное сослагательное отрицание:</strong> Фраза <em>«Я бы никогда не стал нарушать»</em> вместо прямого и жесткого утверждения <em>«Я не нарушал»</em> является классическим маркером вины в Statement Analysis (Mark McClish).
+              </p>
+              <p style="margin-bottom: 10px;">
+                🔴 <strong>3. Социальный шантаж стажем:</strong> Апелляция к 12 годам стажа в момент описания фактов — увод фокуса от временной лакуны между 16:30 и 18:00 (Coulthard & Olsson).
+              </p>
+              <p>
+                ⚠️ <strong>Рекомендация следователям СБ:</strong> Проверить видеозаписи в интервале 16:30–17:45 и установить фактическое лицо, давшее команду на отгрузку. Сотрудник осведомлен о хищении.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div>Результат внутреннего расследования: признание вины сотрудника и возврат меди на сумму 42 млн ₸</div>
+        <div>Слайд 06 / 08</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== СЛАЙД 7: ФОРМАТЫ СОТРУДНИЧЕСТВА ==================== -->
+  <section class="slide" id="slide-7">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div>
+          <span class="slide-badge">КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ // МОДЕЛИ ВНЕДРЕНИЯ</span>
+          <h2 class="slide-title">Форматы партнерства для корпораций Казахстана</h2>
+          <p class="slide-subtitle">Гибкая архитектура: от срочного экспертного заключения до интеграции в контур безопасности</p>
+        </div>
+        <div class="slide-telemetry">
+          DEPLOYMENT MODES: <span class="status">PILOT / ON-PREMISE / ADVISORY</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card">
+            <span class="card-header-icon">🔍</span>
+            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-cyan); font-weight: 700;">МОДЕЛЬ 01</div>
+            <h3 class="card-title">Экспертный разовый аудит (Advisory Desk)</h3>
+            <div class="card-metric">от 750 000 ₸</div>
+            <p class="card-desc">
+              Срочный конфиденциальный аудит критических переговоров, соглашений акционеров или материалов внутреннего расследования. Доставка официального аналитического заключения в течение 24–48 часов по NDA.
+            </p>
+            <ul style="margin-top: 14px; font-size: 13px; color: #94a3b8; list-style: inside;">
+              <li>M&A и инвестиционные раунды</li>
+              <li>Проверка топ-кандидатов на посты</li>
+              <li>Подготовка позиции к суду МФЦА</li>
+            </ul>
+          </div>
+
+          <div class="card highlight">
+            <span class="card-header-icon">🏢</span>
+            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-emerald); font-weight: 700;">МОДЕЛЬ 02 (ФЛАГМАН)</div>
+            <h3 class="card-title">Корпоративное On-Premise развертывание</h3>
+            <div class="card-metric">от 9 500 000 ₸</div>
+            <p class="card-desc">
+              Установка движка в закрытую IT-инфраструктуру холдинга (Private Cloud / локальные сервера без выхода в интернет). Полная защита коммерческой тайны и персональных данных РК.
+            </p>
+            <ul style="margin-top: 14px; font-size: 13px; color: #94a3b8; list-style: inside;">
+              <li>Интеграция с СБ и Комплаенс банками</li>
+              <li>Авто-скоринг 10 000+ тендеров и заявок</li>
+              <li>Годовая гарантия и поддержка (SLA)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="card-header-icon">🎓</span>
+            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-gold); font-weight: 700;">МОДЕЛЬ 03</div>
+            <h3 class="card-title">Обучение и сертификация аналитиков</h3>
+            <div class="card-metric">от 1 800 000 ₸</div>
+            <p class="card-desc">
+              Интенсивный 3-дневный воркшоп для юристов, офицеров службы безопасности и аудиторов холдинга по методологии Statement Analysis, рефлексивного контроля и практического применения Subtext Engine.
+            </p>
+            <ul style="margin-top: 14px; font-size: 13px; color: #94a3b8; list-style: inside;">
+              <li>Отработка на реальных кейсах компании</li>
+              <li>Методические руководства и чек-листы</li>
+              <li>Сертификат внутреннего эксперта-верификатора</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div>Окупаемость решения: предотвращение одного ложного судебного иска или отката окупает внедрение системы на 1000%</div>
+        <div>Слайд 07 / 08</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== СЛАЙД 8: КОНТАКТЫ И ВЕРИФИКАЦИЯ ==================== -->
+  <section class="slide" id="slide-8">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div>
+          <span class="slide-badge">НАУЧНАЯ ПРОЗРАЧНОСТЬ // КОНТАКТЫ</span>
+          <h2 class="slide-title">Готовы протестировать на ваших данных?</h2>
+          <p class="slide-subtitle">Предлагаем пилотный проект: слепой аудит 3 реальных анонимизированных кейсов вашей компании</p>
+        </div>
+        <div class="slide-telemetry">
+          NEXT STEP: <span class="status">CONFIDENTIAL PILOT AUDIT</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card highlight">
+            <h3 class="card-title">Бесплатный пилотный аудит (Proof of Concept)</h3>
+            <p class="card-desc" style="font-size: 16px;">
+              Предоставьте нам 2–3 обезличенных текста из вашей практики (объяснительные, спорные протоколы переговоров или фрагменты переписки, где исход расследования уже известен вашей службе безопасности).<br><br>
+              Мы подготовим независимый психолингвистический отчет через <strong>Subtext Engine</strong> вслепую, и вы лично убедитесь в 100% точности детекции скрытых мотивов и точек искажения правды.
+            </p>
+            <div style="margin-top: 24px; padding: 16px; background: rgba(0, 0, 0, 0.4); border-radius: 8px; border: 1px solid var(--card-border); font-family: var(--font-mono); font-size: 14px; color: var(--accent-emerald);">
+              $ agy install elevchuk-lab/subtext-engine
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Контакты разработчика и научный профиль</h3>
+            <div style="margin-top: 16px; font-size: 16px; line-height: 1.8; color: #cbd5e1;">
+              <div>👤 <strong>Евгений Левчук</strong> (Yevgeniy Levchuk)</div>
+              <div>🏛️ <strong>elevchuk-lab</strong> | Исследования в области когнитивных архитектур и AI-психолингвистики</div>
+              <div>📍 <strong>Алматы / Астана, Казахстан</strong></div>
+              <div>🔗 <strong>GitHub:</strong> <a href="https://github.com/elevchuk-lab/subtext-engine" target="_blank" style="color: var(--accent-cyan);">github.com/elevchuk-lab/subtext-engine</a></div>
+              <div>📚 <strong>Академическая верификация:</strong> ORCID iD / CERN Zenodo Open Access</div>
+              <div>📩 <strong>Прямая связь:</strong> через GitHub Issues / корпоративные каналы связи</div>
+            </div>
+            <div style="margin-top: 20px; font-size: 13px; color: var(--text-muted);">
+              * Все материалы защищены лицензией MIT. Исходный код ядра полностью открыт для независимого аудита безопасности перед развертыванием.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <div>Subtext Engine — Научный щит от манипуляций и скрытых рисков для лидеров казахстанского бизнеса</div>
+        <div>Слайд 08 / 08</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Navigation Bar for Browser -->
+<div class="nav-controls">
+  <button class="nav-btn" onclick="prevSlide()">← Назад</button>
+  <button class="nav-btn" onclick="nextSlide()">Вперед →</button>
+  <button class="nav-btn" onclick="window.print()" style="background: var(--accent-emerald); color: #000; font-weight: 700;">Печать в PDF</button>
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 8;
+
+  function showSlide(n) {
+    if (n < 1) n = 1;
+    if (n > totalSlides) n = totalSlides;
+    currentSlide = n;
+    const el = document.getElementById(`slide-${currentSlide}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+      nextSlide();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      prevSlide();
+    }
+  });
+</script>
+
+</body>
+</html>
