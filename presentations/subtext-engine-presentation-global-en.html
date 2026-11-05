@@ -3,33 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SUBTEXT ENGINE — Enterprise Briefing & Global Architecture</title>
+<title>SUBTEXT ENGINE — Strategic Briefing (Global Swiss Minimalist Architectural Edition)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-dark: #07090e;
-    --card-bg: #0e131d;
-    --card-border: #1a2333;
-    --text-main: #f1f5f9;
-    --text-muted: #94a3b8;
-    --accent-emerald: #00f59b;
-    --accent-cyan: #00d4ff;
-    --accent-gold: #f59e0b;
-    --accent-ruby: #ff2a5f;
-    --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-    --font-mono: "SF Mono", "Menlo", monospace;
+    --bg-page: #FFFFFF;
+    --bg-surface: #F8FAFC;
+    --swiss-black: #0A0F1D;
+    --swiss-red: #DC2626;
+    --swiss-red-bg: #FEF2F2;
+    --swiss-navy: #0F172A;
+    --swiss-sage: #166534;
+    --swiss-sage-bg: #F0FDF4;
+    --swiss-amber: #B45309;
+    --swiss-amber-bg: #FFFBEB;
+    --card-bg: #FFFFFF;
+    --card-border: #0A0F1D;
+    --card-border-subtle: #E2E8F0;
+    --text-primary: #0A0F1D;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --brand-navy: #0F172A;
+    --brand-sage: #166534;
+    --brand-sage-bg: #F0FDF4;
+    --brand-ruby: #DC2626;
+    --brand-ruby-bg: #FEF2F2;
+    --brand-amber: #B45309;
+    --brand-amber-bg: #FFFBEB;
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', "SF Mono", Menlo, monospace;
   }
 
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border-radius: 0 !important;
   }
 
   body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
+    background-color: #E2E8F0;
+    color: var(--text-primary);
     font-family: var(--font-sans);
-    line-height: 1.5;
+    line-height: 1.45;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -41,92 +60,114 @@
   .slide {
     width: 1920px;
     height: 1080px;
-    padding: 80px 100px;
-    background: radial-gradient(circle at 85% 15%, rgba(0, 245, 155, 0.05) 0%, transparent 45%),
-                radial-gradient(circle at 15% 85%, rgba(0, 212, 255, 0.04) 0%, transparent 45%),
-                var(--bg-dark);
-    border-bottom: 2px solid #161f30;
+    padding: 65px 85px;
+    background-color: var(--bg-page);
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     page-break-after: always;
+    border-bottom: 2px solid #CBD5E1;
   }
 
+  /* Swiss Architectural Top Rule */
   .slide::before {
     content: "";
     position: absolute;
-    inset: 0;
-    background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 80px 80px;
-    pointer-events: none;
-    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--swiss-black);
+  }
+
+  /* Architectural Sub-Rule */
+  .slide::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--card-border-subtle);
   }
 
   .slide-content {
-    position: relative;
-    z-index: 2;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
+  /* Header */
   .slide-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 1px solid var(--card-border);
-    padding-bottom: 24px;
-    margin-bottom: 30px;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--swiss-black);
+    padding-bottom: 18px;
+    margin-bottom: 24px;
   }
 
   .slide-badge {
     font-family: var(--font-mono);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--accent-emerald);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    color: var(--swiss-black);
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(0, 245, 155, 0.08);
-    padding: 6px 14px;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 245, 155, 0.2);
-    margin-bottom: 12px;
+    background: #FFF;
+    border: 1.5px solid var(--swiss-black);
+    padding: 5px 12px;
+    margin-bottom: 10px;
   }
 
   .slide-title {
-    font-size: 42px;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: #fff;
-    line-height: 1.15;
+    font-family: var(--font-heading);
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--swiss-black);
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .slide-title .serif-accent, .slide-title .serif-italics {
+    font-family: var(--font-heading) !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    color: var(--swiss-red) !important;
+    letter-spacing: -0.04em;
   }
 
   .slide-subtitle {
-    font-size: 20px;
-    color: var(--text-muted);
+    font-size: 17px;
+    color: var(--text-secondary);
     margin-top: 6px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 
-  .slide-telemetry {
+  .slide-meta {
     font-family: var(--font-mono);
-    font-size: 14px;
+    font-size: 12px;
     color: var(--text-muted);
     text-align: right;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
-  .slide-telemetry .status {
-    color: var(--accent-cyan);
-    font-weight: 600;
+  .slide-meta .status-badge {
+    color: var(--swiss-sage);
+    font-weight: 800;
   }
 
+  /* Body */
   .slide-body {
     flex: 1;
     display: flex;
@@ -134,140 +175,167 @@
     justify-content: center;
   }
 
+  /* Grids */
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 28px;
   }
 
   .grid-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 24px;
   }
 
   .grid-4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
 
+  /* Swiss Architectural Cards */
   .card {
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    padding: 30px;
+    border: 1.5px solid var(--swiss-black);
+    padding: 24px;
     position: relative;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
   }
 
-  .card.highlight {
-    border-color: rgba(0, 245, 155, 0.4);
-    background: linear-gradient(180deg, rgba(0, 245, 155, 0.04) 0%, var(--card-bg) 100%);
+  .card-ruby {
+    border-top: 6px solid var(--swiss-red);
+    border-left: 1.5px solid var(--swiss-black);
+    border-right: 1.5px solid var(--swiss-black);
+    border-bottom: 1.5px solid var(--swiss-black);
+    background: #FFF;
   }
 
-  .card.highlight-cyan {
-    border-color: rgba(0, 212, 255, 0.4);
-    background: linear-gradient(180deg, rgba(0, 212, 255, 0.04) 0%, var(--card-bg) 100%);
+  .card-sage {
+    border-top: 6px solid var(--swiss-sage);
+    border-left: 1.5px solid var(--swiss-black);
+    border-right: 1.5px solid var(--swiss-black);
+    border-bottom: 1.5px solid var(--swiss-black);
+    background: #FFF;
   }
 
-  .card.highlight-ruby {
-    border-color: rgba(255, 42, 95, 0.4);
-    background: linear-gradient(180deg, rgba(255, 42, 95, 0.04) 0%, var(--card-bg) 100%);
-  }
-
-  .card-header-icon {
-    font-size: 32px;
-    margin-bottom: 16px;
-    display: inline-block;
+  .card-navy {
+    border-top: 6px solid var(--swiss-navy);
+    border-left: 1.5px solid var(--swiss-black);
+    border-right: 1.5px solid var(--swiss-black);
+    border-bottom: 1.5px solid var(--swiss-black);
+    background: #FFF;
   }
 
   .card-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 12px;
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-weight: 900;
+    color: var(--swiss-black);
+    margin-bottom: 10px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
   }
 
   .card-desc {
-    font-size: 16px;
-    color: var(--text-muted);
+    font-size: 14.5px;
+    color: var(--text-secondary);
     line-height: 1.6;
   }
 
   .card-metric {
-    font-family: var(--font-mono);
-    font-size: 38px;
-    font-weight: 800;
-    color: var(--accent-emerald);
-    margin: 12px 0;
+    font-family: var(--font-heading);
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--swiss-black);
+    margin: 8px 0;
+    letter-spacing: -0.03em;
   }
 
+  /* Table */
   .table-container {
     width: 100%;
+    border: 1.5px solid var(--swiss-black);
     overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid var(--card-border);
-    background: var(--card-bg);
+    background: #FFF;
   }
 
   table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   th {
-    background: #131a29;
-    color: var(--accent-emerald);
-    font-family: var(--font-mono);
-    font-size: 13px;
+    background: var(--swiss-black);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding: 16px 20px;
-    border-bottom: 2px solid #1c273c;
+    padding: 12px 16px;
+    border-bottom: 1.5px solid var(--swiss-black);
   }
 
   td {
-    padding: 16px 20px;
-    border-bottom: 1px solid #162032;
-    color: #cbd5e1;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--card-border-subtle);
+    border-right: 1px solid var(--card-border-subtle);
+    color: var(--text-secondary);
     vertical-align: middle;
+    line-height: 1.5;
+  }
+
+  td:last-child {
+    border-right: none;
   }
 
   tr:last-child td {
     border-bottom: none;
   }
 
-  tr:hover td {
-    background: rgba(255, 255, 255, 0.02);
+  tr:nth-child(even) td {
+    background: #F8FAFC;
   }
 
-  .badge-sector {
+  .tag-sector {
     display: inline-block;
-    padding: 4px 10px;
-    border-radius: 4px;
+    padding: 3px 8px;
     font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 600;
-    background: rgba(0, 212, 255, 0.1);
-    color: var(--accent-cyan);
-    border: 1px solid rgba(0, 212, 255, 0.25);
+    font-size: 11px;
+    font-weight: 800;
+    background: #FFF;
+    color: var(--swiss-black);
+    border: 1px solid var(--swiss-black);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
+  /* Footer */
   .slide-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--card-border);
-    padding-top: 20px;
-    margin-top: 20px;
+    border-top: 1.5px solid var(--swiss-black);
+    padding-top: 14px;
+    margin-top: 18px;
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 11.5px;
     color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
+  .slide-footer a {
+    color: var(--swiss-black);
+    font-weight: 800;
+    text-decoration: underline;
+  }
+
+  /* Hero Elements */
   .hero-slide {
     text-align: left;
     display: flex;
@@ -277,90 +345,127 @@
   }
 
   .hero-title {
-    font-size: 68px;
+    font-family: var(--font-heading);
+    font-size: 64px;
     font-weight: 900;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #ffffff 40%, #00f59b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 20px 0;
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+    color: var(--swiss-black);
+    margin: 16px 0;
+    text-transform: uppercase;
+  }
+
+  .hero-title .serif-italics, .hero-title .serif-accent {
+    font-family: var(--font-heading) !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    color: var(--swiss-red) !important;
+    letter-spacing: -0.05em;
   }
 
   .hero-lead {
-    font-size: 26px;
-    color: #cbd5e1;
-    max-width: 1250px;
+    font-size: 23px;
+    color: var(--text-secondary);
+    max-width: 1350px;
     line-height: 1.5;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 
   .hero-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 30px;
+    gap: 20px;
+    margin-top: 20px;
   }
 
   .stat-box {
-    background: rgba(14, 19, 29, 0.7);
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    padding: 24px;
-    border-left: 4px solid var(--accent-emerald);
+    background: #FFF;
+    border: 1.5px solid var(--swiss-black);
+    padding: 22px;
+    border-left: 8px solid var(--swiss-black);
   }
 
-  .stat-value {
-    font-family: var(--font-mono);
+  .stat-box:nth-child(2) {
+    border-left: 8px solid var(--swiss-red);
+  }
+
+  .stat-box:nth-child(3) {
+    border-left: 8px solid var(--swiss-sage);
+  }
+
+  .stat-box:nth-child(4) {
+    border-left: 8px solid var(--swiss-navy);
+  }
+
+  .stat-val {
+    font-family: var(--font-heading);
     font-size: 42px;
-    font-weight: 800;
-    color: #fff;
+    font-weight: 900;
+    color: var(--swiss-black);
+    letter-spacing: -0.04em;
   }
 
-  .stat-label {
-    font-size: 15px;
+  .stat-lbl {
+    font-size: 13.5px;
     color: var(--text-muted);
     margin-top: 6px;
+    line-height: 1.4;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .nav-controls {
     position: fixed;
-    bottom: 30px;
-    right: 40px;
+    bottom: 24px;
+    right: 30px;
     display: flex;
-    gap: 12px;
+    gap: 10px;
     z-index: 100;
   }
 
   .nav-btn {
-    background: #111827;
-    border: 1px solid #374151;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 8px;
+    background: var(--swiss-black);
+    color: #FFF;
+    border: 1.5px solid #FFF;
+    padding: 10px 18px;
     font-family: var(--font-mono);
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 800;
     cursor: pointer;
-    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
   .nav-btn:hover {
-    background: var(--accent-emerald);
-    color: #000;
-    border-color: var(--accent-emerald);
+    background: var(--swiss-red);
   }
 
   @media print {
+    @page {
+      size: 1920px 1080px;
+      margin: 0;
+    }
+    body {
+      background-color: #FFF !important;
+    }
     .nav-controls {
       display: none !important;
     }
     .slide {
-      border-bottom: none;
-      page-break-after: always;
-      height: 100vh;
-      width: 100vw;
+      border: none !important;
+      page-break-after: always !important;
+      height: 1080px !important;
+      width: 1920px !important;
+      background: #FFF !important;
+    }
+    .card, .table-container, .stat-box {
+      box-shadow: none !important;
     }
   }
+</style>
 </style>
 </head>
 <body>
@@ -372,40 +477,40 @@
     <div class="slide-content">
       <div class="slide-header">
         <div>
-          <span class="slide-badge">GLOBAL ENTERPRISE BRIEFING // STRATEGIC RISK INTELLIGENCE</span>
+          <span class="slide-badge">GLOBAL ENTERPRISE BRIEFING // RISK INTELLIGENCE</span>
         </div>
-        <div class="slide-telemetry">
-          SYSTEM IDENTIFIER: <span class="status">FORENSIC COGNITIVE ENGINE</span><br>
+        <div class="slide-meta">
+          CLASSIFICATION: <span class="status-badge">HIGH-STAKES GOVERNANCE</span><br>
           CERN ZENODO REGISTERED // ORCID ISO 27729
         </div>
       </div>
 
       <div class="slide-body">
         <div class="hero-slide">
-          <span style="font-family: var(--font-mono); color: var(--accent-cyan); font-size: 20px; letter-spacing: 0.15em;">
-            [ FORENSIC PSYCHOLINGUISTIC & DECEPTION DETECTION ARCHITECTURE ]
+          <span style="font-family: var(--font-mono); color: var(--brand-sage); font-size: 18px; font-weight: 700; letter-spacing: 0.12em;">
+            [ FORENSIC PSYCHOLINGUISTIC & COGNITIVE RISK ENGINE ]
           </span>
-          <h1 class="hero-title">SUBTEXT ENGINE</h1>
+          <h1 class="hero-title">SUBTEXT <span class="serif-italics">ENGINE</span></h1>
           <p class="hero-lead">
             An algorithmic forensic engine for detecting covert manipulation, systemic deception, reflexive control, and testimony fabrication across high-stakes negotiations, private equity due diligence, and elite corporate litigation.
           </p>
 
           <div class="hero-stats">
             <div class="stat-box">
-              <div class="stat-value">21</div>
-              <div class="stat-label">Peer-Reviewed Scientific Treatises (FBI, BGH 1999, Cambridge, LIWC, RAS)</div>
+              <div class="stat-val">21</div>
+              <div class="stat-lbl">Peer-Reviewed Scientific Treatises (FBI, BGH 1999, Cambridge, LIWC, RAS)</div>
             </div>
-            <div class="stat-box" style="border-left-color: var(--accent-cyan);">
-              <div class="stat-value">8</div>
-              <div class="stat-label">Global Forensic Disciplines (Statement Analysis, CBCA, Reflexive Control)</div>
+            <div class="stat-box" style="border-left-color: var(--brand-sage);">
+              <div class="stat-val">8</div>
+              <div class="stat-lbl">Global Forensic Disciplines (Statement Analysis, CBCA, Reflexive Control)</div>
             </div>
-            <div class="stat-box" style="border-left-color: var(--accent-gold);">
-              <div class="stat-value">0%</div>
-              <div class="stat-label">Data Leakage: Air-Gapped Private VPC & On-Premise Local Deployment</div>
+            <div class="stat-box" style="border-left-color: var(--brand-amber);">
+              <div class="stat-val">0%</div>
+              <div class="stat-lbl">Data Leakage: Air-Gapped Private VPC & On-Premise Local Deployment</div>
             </div>
-            <div class="stat-box" style="border-left-color: var(--accent-ruby);">
-              <div class="stat-value">100%</div>
-              <div class="stat-label">Court-Admissible Metrics: Strictly excludes discredited commercial SCAN</div>
+            <div class="stat-box" style="border-left-color: var(--brand-ruby);">
+              <div class="stat-val">100%</div>
+              <div class="stat-lbl">Court-Admissible Metrics: Strictly excludes discredited commercial SCAN</div>
             </div>
           </div>
         </div>
@@ -414,7 +519,7 @@
       <div class="slide-footer">
         <div>Architect: <strong>Yevgeniy Levchuk</strong> (elevchuk-lab)</div>
         <div>Permanent CERN DOI: <strong>10.5281/zenodo.subtext</strong> | Open Source Auditability</div>
-        <div>Slide 01 / 08</div>
+        <div>Page 01 / 08</div>
       </div>
     </div>
   </section>
@@ -424,46 +529,44 @@
     <div class="slide-content">
       <div class="slide-header">
         <div>
-          <span class="slide-badge">THE ARCHITECTURAL DEFECT // FRONTIER LLM EVALUATION</span>
-          <h2 class="slide-title">The Dangerous Blind Spot of Generative AI</h2>
-          <p class="slide-subtitle">Why standard LLMs and human analysts fail to detect sophisticated deception and bad-faith actors</p>
+          <span class="slide-badge">ARCHITECTURAL DEFECT // FRONTIER LLM EVALUATION</span>
+          <h2 class="slide-title">The Dangerous Blind Spot of <span class="serif-italics">Generative AI</span></h2>
+          <p class="slide-subtitle">Why standard LLMs and traditional due diligence fail to detect sophisticated deception</p>
         </div>
-        <div class="slide-telemetry">
-          EVALUATION VECTOR: <span style="color: var(--accent-ruby); font-weight: 700;">CONTENT VS. STRUCTURE</span>
+        <div class="slide-meta">
+          EVALUATION VECTOR: <span style="color: var(--brand-ruby); font-weight: 700;">CONTENT VS. STRUCTURE</span><br>
+          DEFECT: RLHF SYCOPHANCY
         </div>
       </div>
 
       <div class="slide-body">
         <div class="grid-3">
-          <div class="card highlight-ruby">
-            <span class="card-header-icon">⚠️</span>
+          <div class="card card-ruby">
             <h3 class="card-title">1. The Content-Layer Vulnerability</h3>
             <p class="card-desc">
-              Standard LLMs (GPT-4o, Claude 3.5, Gemini) and traditional legal counsel evaluate communication at the <strong>semantic content layer</strong> (<em>what</em> is said). Skilled deceivers, predatory partners, and hostile state actors exploit this by authoring syntactically pristine narratives that conceal fraudulent intent beneath immaculate rhetoric.
+              Standard LLMs (GPT-4o, Claude 3.5, Gemini) and conventional legal teams evaluate communication at the <strong>semantic content layer</strong> (<em>what</em> is said). Sophisticated bad-faith counterparties exploit this vulnerability by producing syntactically pristine narratives that conceal catastrophic liabilities beneath plausible rhetoric.
             </p>
           </div>
 
-          <div class="card highlight-gold">
-            <span class="card-header-icon">🤖</span>
+          <div class="card card-sage">
             <h3 class="card-title">2. RLHF-Induced Sycophancy</h3>
             <p class="card-desc">
-              Reinforcement Learning from Human Feedback (RLHF) forces public AI models to be polite, agreeable, and trustful. When presented with a manipulative contract or evasive executive testimony, standard LLMs default to "charitable interpretation," actively rationalizing glaring temporal gaps and psychological red flags.
+              Reinforcement Learning from Human Feedback (RLHF) optimizes commercial AI models to be agreeable, harmless, and polite. When presented with evasive executive testimony or high-stakes contracts, frontier LLMs default to "charitable interpretation," actively rationalizing glaring temporal gaps and psychological red flags.
             </p>
           </div>
 
-          <div class="card highlight-cyan">
-            <span class="card-header-icon">🔬</span>
+          <div class="card card-navy">
             <h3 class="card-title">3. The Subtext Engine Solution</h3>
             <p class="card-desc">
-              Subtext Engine operates exclusively at the <strong>structural, syntactic, and reflexive layers</strong>: <em>how</em> things are articulated, <em>what</em> critical experiential details are omitted, and <em>how</em> the listener’s cognitive filter is being engineered. We replace superficial sentiment analysis with verifiable forensic psycholinguistics.
+              Subtext Engine operates exclusively at the <strong>structural, syntactic, and reflexive layers</strong>: <em>how</em> claims are phrased, <em>what</em> critical experiential details are deleted, and <em>how</em> the decision-maker's mental filter is being manipulated. We replace superficial sentiment analysis with verifiable forensic psycholinguistics.
             </p>
           </div>
         </div>
       </div>
 
       <div class="slide-footer">
-        <div>Core Principle: Truth is verified not by rhetorical elegance, but by experiential memory markers</div>
-        <div>Slide 02 / 08</div>
+        <div>Core Axiom: Truth is verified not by rhetorical elegance, but by experiential memory markers</div>
+        <div>Page 02 / 08</div>
       </div>
     </div>
   </section>
@@ -473,61 +576,61 @@
     <div class="slide-content">
       <div class="slide-header">
         <div>
-          <span class="slide-badge">METHODOLOGICAL FOUNDATION // 21 SCIENTIFIC TREATISES</span>
-          <h2 class="slide-title">The 8 Global Forensic Intelligence Pillars</h2>
+          <span class="slide-badge">SCIENTIFIC FOUNDATION // 21 TREATISES</span>
+          <h2 class="slide-title">The 8 Global Forensic <span class="serif-italics">Intelligence Pillars</span></h2>
           <p class="slide-subtitle">A mathematically unified framework validated by German, European, and US judicial precedents</p>
         </div>
-        <div class="slide-telemetry">
-          STANDARDS: <span class="status">BGH 1999 // DAUBERT // FRYE</span>
+        <div class="slide-meta">
+          EVIDENTIARY STANDARDS: <span class="status-badge">BGH 1999 // DAUBERT // FRYE</span>
         </div>
       </div>
 
       <div class="slide-body">
         <div class="grid-4">
           <div class="card">
-            <div style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 13px; font-weight: 700; margin-bottom: 8px;">PILLAR 01 // STATEMENT ANALYSIS</div>
-            <h4 class="card-title" style="font-size: 18px;">Statement Balance & Syntax Stalling</h4>
-            <p class="card-desc" style="font-size: 14px;">
+            <div style="color: var(--brand-sage); font-family: var(--font-mono); font-size: 12px; font-weight: 700; margin-bottom: 6px;">01 // STATEMENT ANALYSIS</div>
+            <h4 class="card-title" style="font-size: 17px;">Statement Balance & Syntax</h4>
+            <p class="card-desc" style="font-size: 13.5px;">
               FBI 20/50/30 structural balance, 1st-person pronoun drop, reliable denials ("I did not [X]"), and temporal lacunae (Adams, McClish, Coulthard, Olsson).
             </p>
           </div>
 
           <div class="card">
-            <div style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 13px; font-weight: 700; margin-bottom: 8px;">PILLAR 02 // JUDICIAL CREDIBILITY</div>
-            <h4 class="card-title" style="font-size: 18px;">CBCA & Reality Monitoring</h4>
-            <p class="card-desc" style="font-size: 14px;">
+            <div style="color: var(--brand-sage); font-family: var(--font-mono); font-size: 12px; font-weight: 700; margin-bottom: 6px;">02 // JUDICIAL CREDIBILITY</div>
+            <h4 class="card-title" style="font-size: 17px;">CBCA & Reality Monitoring</h4>
+            <p class="card-desc" style="font-size: 13.5px;">
               19 Undeutsch criteria of experiential memory (German Federal Court of Justice BGH 1999 standard). Cognitive load elevation in deceit (Steller, Köhnken, Vrij).
             </p>
           </div>
 
           <div class="card">
-            <div style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 13px; font-weight: 700; margin-bottom: 8px;">PILLAR 03 // COMPUTATIONAL METRICS</div>
-            <h4 class="card-title" style="font-size: 18px;">Quantitative LIWC & LDI Ratios</h4>
-            <p class="card-desc" style="font-size: 14px;">
+            <div style="color: var(--brand-sage); font-family: var(--font-mono); font-size: 12px; font-weight: 700; margin-bottom: 6px;">03 // COMPUTATIONAL METRICS</div>
+            <h4 class="card-title" style="font-size: 17px;">Quantitative LIWC & LDI Ratios</h4>
+            <p class="card-desc" style="font-size: 13.5px;">
               Mathematical function word ratios, exclusive particle dropping, and the Linguistic Distancing Index (LDI) for psychological detachment (Pennebaker, Newman).
             </p>
           </div>
 
           <div class="card">
-            <div style="color: var(--accent-emerald); font-family: var(--font-mono); font-size: 13px; font-weight: 700; margin-bottom: 8px;">PILLAR 04 // REFLEXIVE CYBERNETICS</div>
-            <h4 class="card-title" style="font-size: 18px;">Reflexive Control & Coercion</h4>
-            <p class="card-desc" style="font-size: 14px;">
+            <div style="color: var(--brand-sage); font-family: var(--font-mono); font-size: 12px; font-weight: 700; margin-bottom: 6px;">04 // CYBERNETICS & DEFENSE</div>
+            <h4 class="card-title" style="font-size: 17px;">Reflexive Control & Coercion</h4>
+            <p class="card-desc" style="font-size: 13.5px;">
               Lefebvre’s reflexive polynomials, false double-binds, Hassan’s B.I.T.E. model, and Biderman’s UN interrogation manipulation matrices.
             </p>
           </div>
         </div>
 
-        <div style="margin-top: 24px; background: rgba(0, 245, 155, 0.04); border: 1px solid rgba(0, 245, 155, 0.2); border-radius: 8px; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center;">
-          <div style="font-size: 16px; color: #fff;">
-            <strong>Additional Modules:</strong> Cognitive Alethiology (Sartori aIAT), Affective Mimicry & Simulated Remorse (Porter), Global Evaluation System (Arce SEG), and Cross-Cultural SUE Calibration (Nortje).
+        <div style="margin-top: 20px; background: #F1F5F9; border: 1px solid var(--card-border); border-radius: 6px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-size: 15px; color: var(--text-primary);">
+            <strong>Complete Stack:</strong> Cognitive Alethiology (Sartori aIAT), Affective Mimicry & Remorse (Porter), Global Evaluation System (Arce SEG), and Cross-Cultural SUE (Nortje).
           </div>
           <span class="slide-badge" style="margin: 0;">21 FOUNDATIONAL TREATISES</span>
         </div>
       </div>
 
       <div class="slide-footer">
-        <div>Legal Guarantee: Zero unscientific commercial SCAN gimmicks; 100% peer-reviewed academic literature</div>
-        <div>Slide 03 / 08</div>
+        <div>Legal Integrity: Zero unscientific commercial SCAN gimmicks; 100% peer-reviewed academic literature</div>
+        <div>Page 03 / 08</div>
       </div>
     </div>
   </section>
@@ -537,62 +640,62 @@
     <div class="slide-content">
       <div class="slide-header">
         <div>
-          <span class="slide-badge">ENTERPRISE APPLICATIONS // OPERATIONAL THEATERS</span>
-          <h2 class="slide-title">Four High-Stakes Commercial Arenas</h2>
+          <span class="slide-badge">ENTERPRISE APPLICATIONS // OPERATIONAL ARENAS</span>
+          <h2 class="slide-title">Four High-Stakes <span class="serif-italics">Commercial Arenas</span></h2>
           <p class="slide-subtitle">Where subtle deception, narrative inflation, and hidden agendas cost millions of dollars</p>
         </div>
-        <div class="slide-telemetry">
-          DEPLOYMENT CONTEXT: <span class="status">HIGH-VALUE TRANSACTIONS</span>
+        <div class="slide-meta">
+          APPLICATION: <span class="status-badge">HIGH-VALUE TRANSACTIONS</span>
         </div>
       </div>
 
       <div class="slide-body">
         <div class="grid-2">
-          <div class="card highlight">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div class="card card-navy">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
               <h3 class="card-title" style="margin: 0;">1. Private Equity & M&A Due Diligence</h3>
-              <span class="badge-sector">INVESTMENT & M&A</span>
+              <span class="tag-sector">INVESTMENT & M&A</span>
             </div>
             <p class="card-desc">
-              • <strong>Founder & Management Authenticity Audits:</strong> Screening executive interviews, pitch transcripts, and confidential data room memoranda for unacknowledged liabilities.<br>
-              • <strong>Narrative Inflation Detection:</strong> Pinpointing linguistic markers of exaggerated ARR retention, customer churn rationalization, and IP ownership ambiguity.<br>
-              • <strong>Shadow Negotiation Profiling:</strong> Uncovering counterparty BATNA, hidden friction points, and deal-breaking redlines before signing Definitive Agreements.
+              • <strong>Founder Authenticity Audits:</strong> Screening executive interviews, pitch transcripts, and data room memos for unacknowledged liabilities.<br>
+              • <strong>Narrative Inflation Detection:</strong> Pinpointing linguistic markers of exaggerated ARR retention and customer churn rationalization.<br>
+              • <strong>Shadow Negotiation Profiling:</strong> Uncovering counterparty BATNA, hidden friction points, and deal-breaking redlines before signing.
             </p>
           </div>
 
-          <div class="card highlight-cyan">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-              <h3 class="card-title" style="margin: 0;">2. Corporate Investigations & Forensic Accounting</h3>
-              <span class="badge-sector">FORENSIC RISK & GRC</span>
+          <div class="card card-sage">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h3 class="card-title" style="margin: 0;">2. Corporate Investigations & Forensic Risk</h3>
+              <span class="tag-sector">FORENSIC RISK & GRC</span>
             </div>
             <p class="card-desc">
-              • <strong>Whistleblower Credibility Scoring:</strong> Filtering genuine multi-million-dollar corruption/bribery tips from vexatious or fabricated competitor smears using CBCA.<br>
-              • <strong>Procurement Fraud Collusion:</strong> Detecting terminology mutation across ostensibly independent supplier tender dossiers.<br>
+              • <strong>Whistleblower Credibility Scoring:</strong> Filtering genuine multi-million-dollar corruption tips from fabricated competitor smears using CBCA.<br>
+              • <strong>Procurement Fraud Collusion:</strong> Detecting terminology mutation across ostensibly independent supplier tender bids.<br>
               • <strong>Internal Fraud Interviews:</strong> Assisting forensic accountants and corporate investigators in identifying rehearsed alibis and deceptive evasion.
             </p>
           </div>
 
-          <div class="card highlight-gold">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-              <h3 class="card-title" style="margin: 0;">3. Elite White-Collar Defense & Cross-Border Arbitration</h3>
-              <span class="badge-sector">BIG LAW & ARBITRATION</span>
+          <div class="card card-navy">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h3 class="card-title" style="margin: 0;">3. Elite White-Collar Defense & Arbitration</h3>
+              <span class="tag-sector">BIG LAW & ARBITRATION</span>
             </div>
             <p class="card-desc">
-              • <strong>Deposition Preparation & Cross-Examination:</strong> Stress-testing key witness statements under Coulthard & Olsson forensic linguistic models before depositions.<br>
-              • <strong>International Arbitration (LCIA, ICC, SIAC, ICSID):</strong> Auditing written witness statements for institutional coaching, ghost-drafting contamination, and syntax stall.<br>
-              • <strong>Expert Witness Submissions:</strong> Providing objective, methodology-backed forensic psycholinguistic reports admissible under Daubert and European standards.
+              • <strong>Deposition Preparation:</strong> Stress-testing key witness statements under Coulthard & Olsson forensic linguistic models before depositions.<br>
+              • <strong>International Arbitration (LCIA, ICC, SIAC):</strong> Auditing written witness statements for institutional coaching and syntax stalls.<br>
+              • <strong>Expert Witness Submissions:</strong> Providing objective, methodology-backed forensic psycholinguistic reports admissible under Daubert.
             </p>
           </div>
 
-          <div class="card highlight-ruby">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div class="card card-ruby">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
               <h3 class="card-title" style="margin: 0;">4. Enterprise Security & Counter-Reflexive Intelligence</h3>
-              <span class="badge-sector">GOVTECH & DEFENSE</span>
+              <span class="tag-sector">GOVTECH & DEFENSE</span>
             </div>
             <p class="card-desc">
-              • <strong>Insider Threat Early Warning:</strong> Monitoring communicative anomalies, linguistic distancing shifts, and radicalization/coercion markers in sensitive internal communications.<br>
-              • <strong>Countering Reflexive Manipulation:</strong> Shielding corporate boards and negotiating teams from adversarial state/competitor influence campaigns (Lefebvre matrices).<br>
-              • <strong>Hostile Negotiation Shield:</strong> Real-time linguistic telemetry during high-tension hostage/extortion crises or regulatory investigations.
+              • <strong>Insider Threat Early Warning:</strong> Monitoring communicative anomalies, linguistic distancing shifts, and coercion markers in sensitive channels.<br>
+              • <strong>Countering Reflexive Manipulation:</strong> Shielding corporate boards and negotiating teams from adversarial state/competitor influence campaigns.<br>
+              • <strong>Hostile Negotiation Shield:</strong> Real-time linguistic telemetry during high-tension extortion crises or regulatory investigations.
             </p>
           </div>
         </div>
@@ -600,7 +703,7 @@
 
       <div class="slide-footer">
         <div>Strategic Impact: Replacing subjective gut instinct with mathematically formalized forensic science</div>
-        <div>Slide 04 / 08</div>
+        <div>Page 04 / 08</div>
       </div>
     </div>
   </section>
@@ -611,11 +714,11 @@
       <div class="slide-header">
         <div>
           <span class="slide-badge">MARKET LANDSCAPE // GLOBAL ENTERPRISE MATRIX</span>
-          <h2 class="slide-title">Top 20 Global Target Institutions</h2>
+          <h2 class="slide-title">Top 20 Global Target Institutions: <span class="serif-italics">Entry Vectors</span></h2>
           <p class="slide-subtitle">Decision-makers, critical pain points, and specific Subtext Engine integration vectors</p>
         </div>
-        <div class="slide-telemetry">
-          TOTAL ADDRESSABLE MARKET: <span class="status">$12.4B ENTERPRISE GRC & LITIGATION</span>
+        <div class="slide-meta">
+          ADDRESSABLE MARKET: <span class="status-badge">$12.4B ENTERPRISE RISK & LITIGATION</span>
         </div>
       </div>
 
@@ -632,31 +735,31 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Kroll / FTI Consulting / Control Risks / Alvarez & Marsal</strong><br><span class="badge-sector">Forensic Investigations</span></td>
+                <td><strong>Kroll / FTI Consulting / Control Risks / Alvarez & Marsal</strong><br><span class="tag-sector">Forensic Investigations</span></td>
                 <td>Global Heads of Investigations, Forensic Risk Managing Directors, Senior Partners</td>
                 <td>Rehearsed alibis, hidden asset transfers, subjective investigator bias, unverified whistleblower tips costing clients $50M+.</td>
                 <td>Automated CBCA / Statement Analysis scoring of interview transcripts and confidential informant dossiers.</td>
               </tr>
               <tr>
-                <td><strong>Kirkland & Ellis / Latham & Watkins / Skadden / Quinn Emanuel</strong><br><span class="badge-sector">Big Law White-Collar Defense</span></td>
+                <td><strong>Kirkland & Ellis / Latham & Watkins / Skadden / Quinn Emanuel</strong><br><span class="tag-sector">Big Law White-Collar Defense</span></td>
                 <td>Chairs of White-Collar Defense, Senior Litigation Partners, International Arbitration Heads</td>
                 <td>Coached witness testimony unraveling on the stand; unprovable concealed intent in complex civil fraud or SEC enforcement.</td>
                 <td>Deposition stress-testing; institutional syntax contamination audit; forensic linguistic expert evidence reports.</td>
               </tr>
               <tr>
-                <td><strong>Blackstone / KKR / Carlyle Group / Insight Partners</strong><br><span class="badge-sector">Private Equity & Growth Capital</span></td>
+                <td><strong>Blackstone / KKR / Carlyle Group / Insight Partners</strong><br><span class="tag-sector">Private Equity & Growth Capital</span></td>
                 <td>Managing Directors, Operating Partners, Due Diligence Heads, Investment Committee Members</td>
                 <td>Investing $200M+ based on fabricated metrics, inflated customer satisfaction narratives, or concealed founder IP disputes.</td>
                 <td>Linguistic Distancing Index (LDI) and deceptive omission audits on founder management presentations and Q&A transcripts.</td>
               </tr>
               <tr>
-                <td><strong>Palantir Technologies / Booz Allen Hamilton / Dataminr</strong><br><span class="badge-sector">Defense & Intelligence Contractors</span></td>
+                <td><strong>Palantir Technologies / Booz Allen Hamilton / Dataminr</strong><br><span class="tag-sector">Defense & Threat Intelligence</span></td>
                 <td>Chief Risk Officers, Threat Intelligence Directors, Heads of Counter-Intelligence Practices</td>
                 <td>Adversarial reflexive control operations; cognitive deception campaigns by state-backed actors; malicious insider threats.</td>
                 <td>Integration of Lefebvre reflexive polynomial algorithms into enterprise threat intelligence pipelines.</td>
               </tr>
               <tr>
-                <td><strong>McKinsey & Co. / Bain & Co. (PE Practice) / BCG</strong><br><span class="badge-sector">Strategic Management Advisory</span></td>
+                <td><strong>McKinsey & Co. / Bain & Co. (PE Practice) / BCG</strong><br><span class="tag-sector">Strategic Management Advisory</span></td>
                 <td>Senior Partners (Restructuring & M&A), Heads of Strategic Risk, Board Advisory Leads</td>
                 <td>Advising Fortune 500 boards on cross-border joint ventures while blind to counterparty bad-faith negotiating tactics.</td>
                 <td>Shadow negotiation profiling; real-time cognitive load mapping during cross-border M&A negotiations.</td>
@@ -667,8 +770,8 @@
       </div>
 
       <div class="slide-footer">
-        <div>Combined Annual Transaction Volume: $1.8 Trillion+ | High ROI: Eliminating a single catastrophic M&A error</div>
-        <div>Slide 05 / 08</div>
+        <div>Combined Transaction Volume: $1.8 Trillion+ | High ROI: Eliminating a single catastrophic M&A error</div>
+        <div>Page 05 / 08</div>
       </div>
     </div>
   </section>
@@ -679,43 +782,41 @@
       <div class="slide-header">
         <div>
           <span class="slide-badge">FORENSIC CASE STUDY // LIVE DECONSTRUCTION</span>
-          <h2 class="slide-title">Anatomy of Deception: A $120M M&A Deposition</h2>
+          <h2 class="slide-title">Anatomy of Deception: <span class="serif-italics">A $120M M&A Deposition</span></h2>
           <p class="slide-subtitle">Contrasting human surface review against the Subtext Engine structural X-Ray</p>
         </div>
-        <div class="slide-telemetry">
-          CASE DISCIPLINE: <span class="status">DECEPTION DETECTION</span>
+        <div class="slide-meta">
+          DISCIPLINE: <span class="status-badge">M&A DUE DILIGENCE AUDIT</span>
         </div>
       </div>
 
       <div class="slide-body">
         <div class="grid-2">
           <div class="card">
-            <span class="badge-sector">RAW FOUNDER TESTIMONY (M&A LITIGATION)</span>
-            <div style="background: #080b11; border: 1px solid #1a2333; padding: 20px; border-radius: 8px; margin: 16px 0; font-style: italic; color: #e2e8f0; font-size: 15px; line-height: 1.6;">
+            <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 8px;">RAW FOUNDER TESTIMONY (M&A LITIGATION)</div>
+            <div style="background: #F8FAFC; border: 1px solid var(--card-border); padding: 18px; border-radius: 4px; font-style: italic; color: #1E293B; font-size: 14.5px; line-height: 1.6; margin-bottom: 14px;">
               "I was actively leading our enterprise expansion in Q3. We diligently executed all tier-one customer onboarding protocols. There were no material cancellations reported to me personally. Around mid-August, the platform upgrade was deployed. Everything was operating according to roadmap specifications. A decision was made to postpone enterprise reporting due to ongoing architectural scaling. I would never misrepresent our core churn metrics to incoming private equity investors."
             </div>
-            <div style="color: #94a3b8; font-size: 14px;">
+            <div style="color: var(--text-muted); font-size: 13.5px; border-left: 3px solid #94A3B8; padding-left: 12px;">
               <strong>Typical Corporate Due Diligence Assessment:</strong><br>
               "Founder exudes confidence, accepts leadership role, explicitly denies customer cancellations, and defends company integrity."
             </div>
           </div>
 
-          <div class="card highlight-ruby">
-            <span class="slide-badge" style="background: rgba(255, 42, 95, 0.1); border-color: rgba(255, 42, 95, 0.3); color: var(--accent-ruby);">
-              SUBTEXT ENGINE FORENSIC VERDICT
-            </span>
-            <div style="margin-top: 14px; font-size: 14px; color: #cbd5e1; line-height: 1.6;">
-              <p style="margin-bottom: 10px;">
-                🔴 <strong>1. Pronoun Evaporation & Responsibility Severing:</strong> Moves from personal agency (<em>"I was leading"</em>) to passive evasion (<em>"A decision was made to postpone"</em>). In Statement Analysis, sudden agent deletion at the precise point of failure marks institutional guilt.
+          <div class="card card-ruby">
+            <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--brand-ruby); margin-bottom: 8px;">SUBTEXT ENGINE FORENSIC VERDICT</div>
+            <div style="font-size: 14px; color: var(--text-primary); line-height: 1.6;">
+              <p style="margin-bottom: 8px;">
+                🔴 <strong>1. Pronoun Evaporation & Responsibility Severing:</strong> Moves from personal agency (<em>"I was leading"</em>) to passive evasion (<em>"A decision was made to postpone"</em>). Sudden agent deletion at the precise point of failure marks institutional guilt.
               </p>
-              <p style="margin-bottom: 10px;">
+              <p style="margin-bottom: 8px;">
                 🔴 <strong>2. Equivocal Subjunctive Denial:</strong> <em>"I would never misrepresent..."</em> is a hypothetical non-denial, NOT a reliable factual denial (<em>"I did not misrepresent"</em>). McClish Statement Law: innocent subjects make direct factual assertions in the simple past tense.
               </p>
-              <p style="margin-bottom: 10px;">
+              <p style="margin-bottom: 8px;">
                 🔴 <strong>3. Subjective Memory Void (CBCA Criteria 3 & 4):</strong> Zero perceptual, spontaneous, or sensory details regarding the mid-August upgrade; high cognitive friction around customer retention numbers.
               </p>
-              <p>
-                ⚠️ <strong>Litigation Strategy Recommendation:</strong> Subpoena internal Slack communications between Aug 10–25 regarding churn alerts. Founder was fully aware of catastrophic enterprise customer cancellations prior to closing.
+              <p style="color: var(--brand-ruby); font-weight: 700;">
+                ⚠️ Strategic Verdict: Subpoena internal Slack communications between Aug 10–25. Founder was fully aware of 40% enterprise contract churn prior to closing.
               </p>
             </div>
           </div>
@@ -723,8 +824,8 @@
       </div>
 
       <div class="slide-footer">
-        <div>Outcome: The investment committee avoided a $120M write-down after confirming 40% enterprise contract churn</div>
-        <div>Slide 06 / 08</div>
+        <div>Outcome: The investment committee avoided a $120M write-down after confirming contract churn</div>
+        <div>Page 06 / 08</div>
       </div>
     </div>
   </section>
@@ -734,56 +835,53 @@
     <div class="slide-content">
       <div class="slide-header">
         <div>
-          <span class="slide-badge">COMMERCIAL ENGAGEMENT // DEPLOYMENT ARCHITECTURE</span>
-          <h2 class="slide-title">Enterprise Deployment & Partnership Models</h2>
+          <span class="slide-badge">COMMERCIAL ENGAGEMENT // DEPLOYMENT MODELS</span>
+          <h2 class="slide-title">Enterprise Deployment & <span class="serif-italics">Partnership Models</span></h2>
           <p class="slide-subtitle">From bespoke high-stakes shadow advisory to enterprise air-gapped on-premise integration</p>
         </div>
-        <div class="slide-telemetry">
-          INTEGRATION TIERS: <span class="status">ENTERPRISE SLA // SOC2 / HIPAA COMPLIANT</span>
+        <div class="slide-meta">
+          SLA: <span class="status-badge">AIR-GAPPED // ZERO TELEMETRY LEAKAGE</span>
         </div>
       </div>
 
       <div class="slide-body">
         <div class="grid-3">
-          <div class="card">
-            <span class="card-header-icon">🛡️</span>
-            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-cyan); font-weight: 700;">TIER 01</div>
+          <div class="card card-navy">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--brand-navy); font-weight: 700;">TIER 01</div>
             <h3 class="card-title">Forensic Advisory & Shadow Desk</h3>
             <div class="card-metric">$25K – $75K / deal</div>
             <p class="card-desc">
               Bespoke, rapid-response forensic profiling for active M&A transactions, hostile takeovers, or emergency whistleblower crises under strict attorney-client privilege.
             </p>
-            <ul style="margin-top: 14px; font-size: 13px; color: #94a3b8; list-style: inside;">
+            <ul style="margin-top: 12px; font-size: 13px; color: var(--text-secondary); list-style: inside; line-height: 1.6;">
               <li>24–48 hour turnaround on dossiers</li>
               <li>Counterparty shadow-profiling</li>
               <li>Pre-deposition testimony auditing</li>
             </ul>
           </div>
 
-          <div class="card highlight">
-            <span class="card-header-icon">⚡</span>
-            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-emerald); font-weight: 700;">TIER 02 (FLAGSHIP)</div>
+          <div class="card card-sage">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--brand-sage); font-weight: 700;">TIER 02 (FLAGSHIP)</div>
             <h3 class="card-title">Air-Gapped Private VPC Deployment</h3>
             <div class="card-metric">$120K – $350K / yr</div>
             <p class="card-desc">
               Full enterprise integration within your isolated corporate cloud (AWS GovCloud / Azure Dedicated / On-Premise bare metal). Zero external API calls, zero telemetry leakage.
             </p>
-            <ul style="margin-top: 14px; font-size: 13px; color: #94a3b8; list-style: inside;">
+            <ul style="margin-top: 12px; font-size: 13px; color: var(--text-secondary); list-style: inside; line-height: 1.6;">
               <li>Local weights (Llama 3 / Mistral / DeepSeek)</li>
               <li>Batch processing of 100K+ legal discovery docs</li>
               <li>Enterprise SLA, custom API & prompt fine-tuning</li>
             </ul>
           </div>
 
-          <div class="card">
-            <span class="card-header-icon">🌐</span>
-            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-gold); font-weight: 700;">TIER 03</div>
+          <div class="card card-navy">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--brand-navy); font-weight: 700;">TIER 03</div>
             <h3 class="card-title">OEM & LegalTech Platform License</h3>
             <div class="card-metric">Custom Royalty</div>
             <p class="card-desc">
               Embed Subtext Engine’s 21 algorithms directly into your proprietary GRC platform, e-Discovery software, or ATS HR background verification ecosystem.
             </p>
-            <ul style="margin-top: 14px; font-size: 13px; color: #94a3b8; list-style: inside;">
+            <ul style="margin-top: 12px; font-size: 13px; color: var(--text-secondary); list-style: inside; line-height: 1.6;">
               <li>White-label API & SDK libraries</li>
               <li>Full access to raw psycholinguistic matrices</li>
               <li>Co-branded academic validation credentials</li>
@@ -794,7 +892,7 @@
 
       <div class="slide-footer">
         <div>Return on Investment: Preventing a single toxic executive hire or fraudulent acquisition delivers infinite ROI</div>
-        <div>Slide 07 / 08</div>
+        <div>Page 07 / 08</div>
       </div>
     </div>
   </section>
@@ -804,39 +902,38 @@
     <div class="slide-content">
       <div class="slide-header">
         <div>
-          <span class="slide-badge">PROVENANCE & NEXT STEPS // ACADEMIC RIGOR</span>
-          <h2 class="slide-title">Initiate a Confidential Proof of Concept</h2>
+          <span class="slide-badge">PROVENANCE & ENGAGEMENT // NEXT STEPS</span>
+          <h2 class="slide-title">Initiate a Confidential <span class="serif-italics">Proof of Concept</span></h2>
           <p class="slide-subtitle">Evaluate Subtext Engine in a blinded trial using your organization's historical resolved cases</p>
         </div>
-        <div class="slide-telemetry">
-          NEXT STEP: <span class="status">BLINDED POC PROTOCOL</span>
+        <div class="slide-meta">
+          NEXT STEP: <span class="status-badge">BLINDED TRIAL PROTOCOL</span>
         </div>
       </div>
 
       <div class="slide-body">
         <div class="grid-2">
-          <div class="card highlight">
+          <div class="card card-sage">
             <h3 class="card-title">The Blinded Proof of Concept (PoC) Protocol</h3>
-            <p class="card-desc" style="font-size: 16px;">
-              Provide us with 3 anonymized, historical investigative texts (e.g., fraud depositions, contested whistleblower reports, or negotiation transcripts where the true factual outcome is already known to your team).<br><br>
+            <p class="card-desc" style="font-size: 15.5px;">
+              Provide us with 2–3 anonymized, historical investigative texts (fraud depositions, contested whistleblower reports, or negotiation transcripts where the true factual outcome is already known to your security committee).<br><br>
               Our engine will generate a blinded forensic teardown report. Compare our structural psycholinguistic conclusions against ground truth to confirm the engine’s diagnostic fidelity firsthand.
             </p>
-            <div style="margin-top: 24px; padding: 16px; background: rgba(0, 0, 0, 0.4); border-radius: 8px; border: 1px solid var(--card-border); font-family: var(--font-mono); font-size: 14px; color: var(--accent-emerald);">
+            <div style="margin-top: 20px; padding: 14px; background: #F1F5F9; border-radius: 4px; border: 1px solid var(--card-border); font-family: var(--font-mono); font-size: 13.5px; color: var(--brand-navy); font-weight: 700;">
               $ agy install elevchuk-lab/subtext-engine
             </div>
           </div>
 
-          <div class="card">
+          <div class="card card-navy">
             <h3 class="card-title">Laboratory Credentials & Executive Contact</h3>
-            <div style="margin-top: 16px; font-size: 16px; line-height: 1.8; color: #cbd5e1;">
+            <div style="margin-top: 14px; font-size: 15.5px; line-height: 1.85; color: var(--text-primary);">
               <div>👤 <strong>Yevgeniy Levchuk</strong> (Principal Investigator, elevchuk-lab)</div>
-              <div>🏛️ <strong>Research Focus:</strong> Computational Cognitive Forensics & Algorithmic Deception Detection</div>
-              <div>🔗 <strong>Open Source Core:</strong> <a href="https://github.com/elevchuk-lab/subtext-engine" target="_blank" style="color: var(--accent-cyan);">github.com/elevchuk-lab/subtext-engine</a></div>
-              <div>📚 <strong>Academic Registry:</strong> ORCID Verified // CERN Zenodo Research Archive</div>
+              <div>🏛️ <strong>Research Focus:</strong> Computational Cognitive Forensics & Deception Detection</div>
+              <div>🔗 <strong>Open Source Core:</strong> <a href="https://github.com/elevchuk-lab/subtext-engine" target="_blank" style="color: var(--brand-navy); font-weight: 700;">github.com/elevchuk-lab/subtext-engine</a></div>
+              <div>📚 <strong>Academic Registry:</strong> ORCID Verified // CERN Zenodo Open Access</div>
               <div>📜 <strong>Licensing:</strong> MIT Open Source Core / Enterprise Commercial Dual-License</div>
-              <div>📩 <strong>Inquiries:</strong> Via GitHub Institutional Channels & Confidential Retainers</div>
             </div>
-            <div style="margin-top: 20px; font-size: 13px; color: var(--text-muted);">
+            <div style="margin-top: 16px; font-size: 12.5px; color: var(--text-muted);">
               * The core engine is fully open-source for academic peer-review, security vetting, and algorithmic transparency prior to enterprise deployment.
             </div>
           </div>
@@ -845,18 +942,18 @@
 
       <div class="slide-footer">
         <div>Subtext Engine — Algorithmic Truth Verification for the World’s Highest-Stakes Decision-Makers</div>
-        <div>Slide 08 / 08</div>
+        <div>Page 08 / 08</div>
       </div>
     </div>
   </section>
 
 </div>
 
-<!-- Navigation Bar for Browser -->
+<!-- Navigation Controls -->
 <div class="nav-controls">
   <button class="nav-btn" onclick="prevSlide()">← Back</button>
   <button class="nav-btn" onclick="nextSlide()">Next →</button>
-  <button class="nav-btn" onclick="window.print()" style="background: var(--accent-emerald); color: #000; font-weight: 700;">Print to PDF</button>
+  <button class="nav-btn" onclick="window.print()" style="background: var(--brand-sage);">Print to PDF</button>
 </div>
 
 <script>
