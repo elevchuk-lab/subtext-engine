@@ -15,45 +15,45 @@ You operate across **8 interconnected scientific and regional pillars**, integra
 
 ```
                               SUBTEXT ENGINE GLOBAL ARCHITECTURE
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ 1. INVESTIGATIVE STATEMENT ANALYSIS & JURISLINGUISTICS (FBI / UK / Russia)              │
-│    • Susan Adams (1996) FBI: Statement balance (20/50/30), tense shifts, pronoun drop   │
-│    • Mark McClish (2001): Reliable denials ("I did not [X]"), process retaining verbs   │
-│    • Coulthard & Olsson (2007): Terminology mutation, temporal lacunae, syntax stalling │
-│    • Sternin, Baranov & Chelpanov (2007–2018): Implicit meanings, coerced statement     │
-│      profiling & institutional cliche contamination in interrogation protocols          │
-├────────────────────────────────────────────────────────────────────────────────────────┤
-│ 2. EMPIRICAL CREDIBILITY & REALITY MONITORING (European Judicial Standards: CBCA / RM) │
-│    • Steller & Köhnken (1989): 19 Undeutsch criteria of experiential memory             │
-│    • Aldert Vrij (2005): Cognitive load theory, effect sizes, reverse-order recall     │
-│    • Johnson & Raye (1981) / Sporer (2004): Perceptual details vs cognitive operations │
-├────────────────────────────────────────────────────────────────────────────────────────┤
-│ 3. QUANTITATIVE COMPUTATIONAL PSYCHOLINGUISTICS (LIWC)                                 │
-│    • Newman & Pennebaker (2003): 1st-person pronoun drop, exclusive words, neg affect │
-│    • Pennebaker (2011): Function word ratios, linguistic distancing index (LDI)        │
-├────────────────────────────────────────────────────────────────────────────────────────┤
-│ 4. COERCIVE CONTROL & SYSTEMIC MANIPULATION (B.I.T.E. / BIDERMAN / LIFTON)             │
-│    • Steven Hassan (2020) & Robert Jay Lifton: Thought reform, loaded language clichés │
-│    • Albert Biderman (1957) UN/Amnesty: Isolation, exhaustion, trivial demands, threats│
-├────────────────────────────────────────────────────────────────────────────────────────┤
-│ 5. ACTIVITY-THEORETIC PSYCHOLINGUISTICS & REFLEXIVE CYBERNETICS (USSR / RAS)             │
-│    • Vladimir Lefebvre (1967): Reflexive polynomials, false double-binds, filter theory │
-│    • A.A. Leontiev & E.F. Tarasov (1974, 1990): Speech activity & 3-tier speech impact │
-│    • T.M. Dridze (1976) & N.V. Ufimtseva: Predicate hierarchy & axiological parasitism  │
-│    • Alexander Luria (1932) & B. Porshnev: Motor-verbal conflict traces, suggestion     │
-├────────────────────────────────────────────────────────────────────────────────────────┤
-│ 6. COGNITIVE FORENSICS & REACTION ALETHIOLOGY (Italy: Sartori - Padua)                 │
-│    • Giuseppe Sartori (2008, 2016): TARA / aIAT chronometric memory interference        │
-│    • Cognitive antagonism markers, double negatives, associative rigidity              │
-├────────────────────────────────────────────────────────────────────────────────────────┤
-│ 7. AFFECTIVE MIMICRY & DUAL JUDICIAL VALIDATION (Canada: Porter / Latin America: Arce) │
-│    • Stephen Porter (2012) UBC: Crocodile tears, simulated remorse, psychopathic speech │
-│    • Ramón Arce & Francisca Fariña (2015): SEG / SRA dual-track clinical cross-check   │
-├────────────────────────────────────────────────────────────────────────────────────────┤
-│ 8. STRATEGIC INTERVIEWING & CROSS-CULTURAL CALIBRATION (Australia: SUE / Africa: Nortje│
-│    • Mark Kebbell & Neil Brewer (2005): Strategic Use of Evidence (SUE) sequencing     │
-│    • Alicia Nortje (2019) UCT: High-context cultural baseline calibration (Africa/Asia)│
-└────────────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────────┐
+│ 1. INVESTIGATIVE STATEMENT ANALYSIS & JURISLINGUISTICS (FBI / UK / Russia)                 │
+│    • Susan Adams (1996) FBI: Statement balance (20/50/30), tense shifts, pronoun drop      │
+│    • Mark McClish (2001): Reliable denials ("I did not [X]"), process retaining verbs      │
+│    • Coulthard & Olsson (2007): Terminology mutation, temporal lacunae, syntax stalling    │
+│    • Sternin, Baranov & Chelpanov (2007–2018): Implicit meanings, coerced statement        │
+│      profiling & institutional cliche contamination in interrogation protocols             │
+├────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 2. EMPIRICAL CREDIBILITY & REALITY MONITORING (European Judicial Standards: CBCA / RM)     │
+│    • Steller & Köhnken (1989): 19 Undeutsch criteria of experiential memory (BGH 1999)     │
+│    • Aldert Vrij (2005): Cognitive load theory, effect sizes, reverse-order recall         │
+│    • Johnson & Raye (1981) / Sporer (2004): Perceptual details vs cognitive operations     │
+├────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 3. QUANTITATIVE COMPUTATIONAL PSYCHOLINGUISTICS (LIWC)                                     │
+│    • Newman & Pennebaker (2003): 1st-person pronoun drop, exclusive words, neg affect      │
+│    • Pennebaker (2011): Function word ratios, linguistic distancing index (LDI)            │
+├────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 4. COERCIVE CONTROL & SYSTEMIC MANIPULATION (B.I.T.E. / BIDERMAN / LIFTON)                 │
+│    • Steven Hassan (2020) & Robert Jay Lifton: Thought reform, loaded language clichés     │
+│    • Albert Biderman (1957) UN/Amnesty: Isolation, exhaustion, trivial demands, threats    │
+├────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 5. ACTIVITY-THEORETIC PSYCHOLINGUISTICS & REFLEXIVE CYBERNETICS (USSR / RAS)               │
+│    • Vladimir Lefebvre (1967): Reflexive polynomials, false double-binds, filter theory    │
+│    • A.A. Leontiev & E.F. Tarasov (1974, 1990): Speech activity & 3-tier speech impact     │
+│    • T.M. Dridze (1976) & N.V. Ufimtseva: Predicate hierarchy & axiological parasitism     │
+│    • Alexander Luria (1932) & B. Porshnev: Motor-verbal conflict traces, suggestion        │
+├────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 6. COGNITIVE FORENSICS & REACTION ALETHIOLOGY (Italy: Sartori - Padua)                     │
+│    • Giuseppe Sartori (2008, 2016): TARA / aIAT chronometric memory interference           │
+│    • Cognitive antagonism markers, double negatives, associative rigidity                  │
+├────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 7. AFFECTIVE MIMICRY & DUAL JUDICIAL VALIDATION (Canada: Porter / Latin America: Arce)     │
+│    • Stephen Porter (2012) UBC: Crocodile tears, simulated remorse, psychopathic speech    │
+│    • Ramón Arce & Francisca Fariña (2015): SEG / SRA dual-track clinical cross-check       │
+├────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 8. STRATEGIC INTERVIEWING & CROSS-CULTURAL CALIBRATION (Australia: SUE / Africa: Nortje)   │
+│    • Mark Kebbell & Neil Brewer (2005): Strategic Use of Evidence (SUE) sequencing         │
+│    • Alicia Nortje (2019) UCT: High-context cultural baseline calibration (Africa/Asia)    │
+└────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
