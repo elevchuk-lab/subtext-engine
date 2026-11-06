@@ -1,0 +1,79 @@
+MIT License
+
+Copyright (c) 2026 Yevgeniy Levchuk (elevchuk-lab)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+### Academic & Forensic Attribution Notice
+
+The methodologies integrated into Subtext Engine are grounded in published, peer-reviewed scientific research, public judicial standards, and declassified defense frameworks across 40 foundational treatises:
+
+#### Module I: Classical Forensic Linguistics & Investigative Profiling
+- 01. Statement Analysis Techniques © Susan H. Adams (FBI Law Enforcement Bulletin, 1996).
+- 02. Statement Analysis & Reliable Denial Verification © Mark McClish (Advanced Interviewing Concepts, 2001).
+- 03. Forensic Investigative Discourse Analysis © Malcolm Coulthard & John Olsson (2007, 2008).
+- 04. Criteria-Based Content Analysis (CBCA) © Max Steller & Günter Köhnken (1989; German Federal Court BGH 1999).
+- 05. Cognitive Load Theory in Deception Detection © Aldert Vrij (2005, 2008).
+- 06. Linguistic Inquiry and Word Count (LIWC) © James W. Pennebaker & Matthew L. Newman (2003).
+- 07. Function Words & Linguistic Distancing Index (LDI) © James W. Pennebaker (2011).
+- 08. Reality Monitoring in Deception Detection © Marcia K. Johnson, Carol L. Raye (1981) and Siegfried L. Sporer (2004).
+- 09. The B.I.T.E. Model of Authoritarian Psychological Control © Steven Hassan, Ph.D. (Freedom of Mind Resource Center, 2020).
+- 10. Chart of Coercion © Albert D. Biderman (Bulletin of the New York Academy of Medicine, 1957; Amnesty International).
+- 11. Interpersonal Deception Theory (IDT) © David B. Buller & Judee K. Burgoon (1996).
+- 12. Reflexive Control Theory & Reflexive Polynomials © Vladimir A. Lefebvre (Institute of Psychology, USSR Academy of Sciences, 1967, 1982).
+- 13. Combined Motor Diagnosis of Conflict Traces © Alexander R. Luria (1932).
+- 14. Theory of Suggestion & Counter-Suggestion © Boris F. Porshnev (1966, 1979).
+- 15. Italian Cognitive Forensics & Chronometric Latency (TARA / aIAT) © Giuseppe Sartori (University of Padua, 2008).
+- 16. Affective Mimicry & Simulated Remorse (Crocodile Tears) © Stephen Porter (University of British Columbia, 2012).
+- 17. Global Statement Evaluation System (SEG/SRA) © Ramón Arce & Francisca Fariña (ALPJF, 2015).
+- 18. Strategic Use of Evidence (SUE Protocol) © Mark R. Kebbell & Neil Brewer (2005).
+- 19. Cross-Cultural Baseline Calibration © Alicia Nortje (University of Cape Town, 2019).
+- 20. Moscow Psycholinguistic School, Speech Activity & Predicate Hierarchies © Aleksei A. Leontiev, Yevgeny F. Tarasov, Tamara M. Dridze, Natalia V. Ufimtseva (Institute of Linguistics, USSR/Russian Academy of Sciences, 1974, 1976, 1990, 2011).
+- 21. Forensic Jurislinguistics, Implicit Meaning & Interrogation Profiling © Iosif A. Sternin, Anatoly N. Baranov, Vadim B. Chelpanov, Galina A. Kopnina, Aleksandr R. Ratinov (Voronezh State University, Institute of the Russian Language RAS, 1967–2018).
+
+#### Module II: Advanced Jurislinguistics, Discourse & Quantitative Metrics
+- 22. Forensic Legal Textology & Verifiability Standards © Konstantin I. Brinev, Nikolai D. Golev, Elena I. Galyashina, and RFCFS Ministry of Justice (2007–2018).
+- 23. Critical Discourse Analysis (CDA) & The Ideological Square © Norman Fairclough, Teun A. van Dijk, and Ruth Wodak (1989, 1998, 2001).
+- 24. Systemic Functional Linguistics (SFL) & Transitivity Systems © Michael A.K. Halliday (1985, 1994).
+- 25. Speech Act Theory & Conversational Maxims © J.L. Austin, John R. Searle, and H. Paul Grice (1962, 1969, 1975).
+- 26. Frame Semantics & Conceptual Metaphor Theory © Charles J. Fillmore (FrameNet / UC Berkeley) and George Lakoff (1976, 1980, 1982).
+- 27. Quantitative Forensic Metric Suite (ADI, GSD, CPR, MFR) © elevchuk-lab, with Flesch-Matsukovsky Reading Ease adaptation © G. Matsukovsky & I. Oborneva.
+
+#### Module III: Formal Logic, Game Theory & Network Topology
+- 28. Fundamental Legal Conceptions & Jural Correlatives © Wesley Newcomb Hohfeld (Yale Law School, 1913, 1917).
+- 29. Mechanism Design Theory & Incentive Compatibility © Leonid Hurwicz, Eric S. Maskin, and Roger B. Myerson (Nobel Memorial Prize in Economic Sciences, 2007).
+- 30. Deontic & Temporal Modal Logic (Kripke Semantics & Deadlock Auditing) © Saul A. Kripke, Georg Henrik von Wright (1951), and Amir Pnueli (1977).
+- 31. Computational Forensic Stylometry & Delta Authorship Attribution © John Burrows (2002) and Patrick Juola (2008).
+- 32. Cultural Semiotics & Semiological Warfare © Yuri M. Lotman (Tartu-Moscow Semiotic School, 1990) and Umberto Eco (1976).
+- 33. Network Text Analysis & Graph Centrality in Governance © Mark E.J. Newman (2010) and Stanley Wasserman / Katherine Faust (1994).
+
+#### Module IV: Commercial Intelligence, M&A Due Diligence & Negotiation Forensics
+- 34. Forensic Financial Linguistics & Conference Call Deception © David F. Larcker, Anastasia A. Zakolyukina (Stanford Graduate School of Business, 2012), and Tim Loughran & Bill McDonald (2011).
+- 35. Tactical Crisis Negotiation & Principled Bargaining © Chris Voss (FBI Crisis Negotiation Unit, 2016) and Roger Fisher, William Ury, Bruce Patton (Harvard Program on Negotiation, 1981, 1991).
+- 36. Corporate Psychopathy & The B-Scan 360 © Dr. Robert D. Hare & Dr. Paul Babiak (2006) and Delroy L. Paulhus & Kevin M. Williams (Dark Triad, 2002).
+- 37. Contractual Asymmetry & Trojan Clause Forensics © elevchuk-lab, grounded in universal Common Law Bona Fides and the Doctrine of Unconscionability.
+- 38. The Fraud Triangle & PEACE Investigative Interviewing Model © Donald R. Cressey (1953), Association of Certified Fraud Examiners (ACFE), and UK Home Office Central Planning Unit (1992).
+- 39. Deceptive Design (Dark Patterns) & Behavioral Exploits © Harry Brignull (2010) and Daniel Kahneman & Amos Tversky (Prospect Theory, 1979, 2011).
+- 40. Black's Law Dictionary, Legal Terms of Art & Canons of Construction © Bryan A. Garner (Editor-in-Chief, 8th–11th Eds., 2004–2019) & Henry Campbell Black (1891, 1951).
+
+---
+
+All trademarks, registered names, and institutional affiliations belong to their respective holders. This software and documentation are provided strictly for academic, educational, analytical, and corporate discourse-verification purposes.
