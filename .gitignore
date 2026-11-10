@@ -1,0 +1,9 @@
+.DS_Store
+*.tmp
+*.pdf
+node_modules/
+sources_pdf/
+presentations/
+
+__pycache__/
+*.py[cod]

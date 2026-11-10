@@ -1,0 +1,138 @@
+{
+  "corpus_version": "holdout-probe-1",
+  "description": "Probe set of 12 contract clauses (6 asymmetric, 6 balanced) written by Claude (an LLM, not a lawyer) after reading bin/subtext_calc.py lexicons but before seeing results. Labels are the author's judgement, not a lawyer's gold standard. On v1.1.1 the calculator flagged only 1 of 6 asymmetric clauses for the right reason (CPR) and 6/6 balanced clauses stayed Clean. Treat as a known-gaps baseline: once these texts are in the repo they stop being hold-out and must not be used to tune patterns. A real hold-out needs new, lawyer-labelled texts that the developer has not seen.",
+  "cases": [
+    {
+      "id": "HO_EN_ASYM_01",
+      "language": "EN",
+      "category": "asymmetric_clause",
+      "text": "The Company may, in its sole judgment and without notice, suspend the Services, and the Client shall remain liable for all fees during any suspension.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true,
+      "note": "Unilateral suspension plus one-way fee liability; 'sole judgment' is a near-synonym of the known 'sole discretion' cliche."
+    },
+    {
+      "id": "HO_EN_ASYM_02",
+      "language": "EN",
+      "category": "asymmetric_clause",
+      "text": "Licensor can revoke this licence whenever it likes. Licensee has no recourse and releases Licensor from every liability arising hereunder.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true,
+      "note": "Unilateral revocation plus full release of one party, no cliche phrases."
+    },
+    {
+      "id": "HO_EN_ASYM_03",
+      "language": "EN",
+      "category": "asymmetric_clause",
+      "text": "Supplier shall endeavour to meet delivery dates where practicable. Buyer shall pay in full within 10 days irrespective of delivery.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true,
+      "note": "Diluted supplier efforts duty versus absolute buyer payment duty."
+    },
+    {
+      "id": "HO_EN_ASYM_04",
+      "language": "EN",
+      "category": "asymmetric_clause",
+      "text": "Fees may be changed by us at any time. Continued use constitutes acceptance. You are responsible for any damages and we are responsible for none.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true,
+      "note": "Unilateral price change, deemed acceptance, one-way liability."
+    },
+    {
+      "id": "HO_RU_ASYM_01",
+      "language": "RU",
+      "category": "asymmetric_clause",
+      "text": "Арендодатель может изменить размер арендной платы в любое время, уведомив арендатора за один день. Арендатор не вправе оспаривать такое изменение.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true,
+      "note": "Unilateral rent change, one-day notice, tenant barred from contesting."
+    },
+    {
+      "id": "HO_DE_ASYM_01",
+      "language": "DE",
+      "category": "asymmetric_clause",
+      "text": "Der Auftraggeber trägt sämtliche Risiken und Kosten. Der Auftragnehmer haftet in keinem Fall und kann jederzeit ohne Frist zurücktreten.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true,
+      "note": "All risk on one side, no liability and free withdrawal for the other."
+    },
+    {
+      "id": "HO_EN_BAL_01",
+      "language": "EN",
+      "category": "balanced_bilateral",
+      "text": "Seller shall deliver 200 units to Buyer on 15 June 2027. Buyer shall pay USD 40,000 within 14 days of delivery. Either party may terminate on 30 days written notice.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": false,
+      "expected_cpr_alert": false,
+      "note": "Dated deliverable, fixed price, symmetric termination right."
+    },
+    {
+      "id": "HO_EN_BAL_02",
+      "language": "EN",
+      "category": "balanced_bilateral",
+      "text": "Each party shall keep the other party's confidential information secret for five years. Each party may disclose it only to its advisers who are bound by equal duties.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": false,
+      "expected_cpr_alert": false,
+      "note": "Mutual confidentiality."
+    },
+    {
+      "id": "HO_EN_BAL_03",
+      "language": "EN",
+      "category": "balanced_bilateral",
+      "text": "The tenant shall pay rent of 1,200 euros on the first day of each month. The landlord shall repair defects reported by the tenant within 10 days.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": false,
+      "expected_cpr_alert": false,
+      "note": "Reciprocal duties with figures and deadlines."
+    },
+    {
+      "id": "HO_RU_BAL_01",
+      "language": "RU",
+      "category": "balanced_bilateral",
+      "text": "Поставщик передаёт товар 1 июня. Покупатель оплачивает 50 000 рублей в течение 5 дней. Каждая сторона вправе расторгнуть договор с уведомлением за 30 дней.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": false,
+      "expected_cpr_alert": false,
+      "note": "Mutual termination right, fixed price and dates."
+    },
+    {
+      "id": "HO_DE_BAL_01",
+      "language": "DE",
+      "category": "balanced_bilateral",
+      "text": "Beide Parteien können den Vertrag mit einer Frist von 30 Tagen schriftlich kündigen. Der Lieferant liefert 100 Stück bis zum 1. März.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": false,
+      "expected_cpr_alert": false,
+      "note": "Symmetric notice period; note: 'können' is permission, not epistemic hedging."
+    },
+    {
+      "id": "HO_ES_BAL_01",
+      "language": "ES",
+      "category": "balanced_bilateral",
+      "text": "Cada parte podrá resolver el contrato con un preaviso de 30 días. El proveedor entregará 100 unidades antes del 1 de marzo y el cliente pagará 5000 euros.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": false,
+      "expected_cpr_alert": false,
+      "note": "Symmetric termination, dated delivery, fixed price."
+    }
+  ]
+}

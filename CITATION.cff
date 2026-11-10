@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, methodology, or analytical framework in your research, legal contract screening, or corporate disclosure review, please cite it as below."
+authors:
+  - family-names: "Levchuk"
+    given-names: "Yevgeniy"
+    orcid: "https://orcid.org/0009-0006-7103-0823"
+title: "Subtext Engine: Structured Discourse, Contractual Risk & Financial Language Audit Framework"
+version: "1.1.6"
+date-released: "2026-11-10"
+license: "MIT"
+url: "https://github.com/elevchuk-lab/subtext-engine"
+repository-code: "https://github.com/elevchuk-lab/subtext-engine"
+abstract: "A hybrid contractual, financial disclosure, and negotiation discourse screening toolkit combining a deterministic Python CLI metric calculator (bin/subtext_calc.py) with a structured multi-model LLM verification checklist across 40 literature syntheses."
+keywords:
+  - "contractual due diligence"
+  - "jurislinguistics"
+  - "blacks law dictionary"
+  - "hohfeldian analysis"
+  - "financial linguistics"
+  - "discourse analysis"
+  - "negotiation screening"

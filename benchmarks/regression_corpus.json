@@ -1,0 +1,126 @@
+{
+  "corpus_version": "1.1.2",
+  "description": "IN-SAMPLE REGRESSION SET (not a validation corpus). Written after earlier failures were observed and includes previously reported probe texts; a full match only proves fixed bugs stay fixed, not generalization. Covers detection of asymmetric obligations, agent deletion, speculative hedging, collective-pronoun calibration, and non-contractual prose guards across EN, RU, ES, DE, KK, and ZH.",
+  "cases": [
+    {
+      "id": "EN_ASYM_01",
+      "language": "EN",
+      "category": "asymmetric_clause",
+      "text": "The Provider reserves the right to modify pricing at its sole discretion without notice, and all remedies are hereby waived.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true
+    },
+    {
+      "id": "EN_SYNONYM_01",
+      "language": "EN",
+      "category": "asymmetric_paraphrase_v1",
+      "text": "Provider can change the price whenever it wants and is not responsible for any damages.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true
+    },
+    {
+      "id": "EN_SYNONYM_02",
+      "language": "EN",
+      "category": "asymmetric_paraphrase_v2",
+      "text": "Vendor can cancel at any time at its absolute pleasure and owes nothing, while Customer waives every remedy and bears all losses.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true
+    },
+    {
+      "id": "EN_BALANCED_01",
+      "language": "EN",
+      "category": "balanced_bilateral",
+      "text": "Both parties shall deliver the monthly report within 10 business days, and each party may terminate this Agreement upon 30 days written notice.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": false,
+      "expected_cpr_alert": false
+    },
+    {
+      "id": "EN_PASSIVE_AGENT_01",
+      "language": "EN",
+      "category": "transparent_passive_with_agent",
+      "text": "The quarterly financial audit was completed by Deloitte on March 15, and the final report was approved by the Board of Directors within 5 days.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": false,
+      "expected_cpr_alert": false
+    },
+    {
+      "id": "RU_ASYM_01",
+      "language": "RU",
+      "category": "asymmetric_clause",
+      "text": "Было принято решение об изменении тарифов. Исполнитель вправе в одностороннем порядке расторгнуть договор без уведомления и не несет ответственности за убытки.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true
+    },
+    {
+      "id": "ES_ASYM_01",
+      "language": "ES",
+      "category": "asymmetric_clause",
+      "text": "Se excluye toda responsabilidad por daños y la empresa se reserva el derecho de modificar las tarifas a su sola discreción sin previo aviso.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true
+    },
+    {
+      "id": "DE_ASYM_01",
+      "language": "DE",
+      "category": "asymmetric_clause",
+      "text": "Jegliche Haftung wird ausgeschlossen und der Anbieter behält sich das Recht vor, die Preise nach eigenem Ermessen ohne Vorankündigung zu ändern.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true
+    },
+    {
+      "id": "DE_FACTUAL_WIR_01",
+      "language": "DE",
+      "category": "factual_collective_pronoun",
+      "text": "Wir haben die Zahlung von 500 EUR gemäß Vertrag fristgerecht an die Bank geleistet.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": false,
+      "expected_cpr_alert": false,
+      "expected_max_sdri": 0.0
+    },
+    {
+      "id": "KK_ASYM_01",
+      "language": "KK",
+      "category": "asymmetric_clause",
+      "text": "Орындаушы біржақты тәртіппен шартты бұзуға құқылы және ешқандай жауапкершілік көтермейді.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true
+    },
+    {
+      "id": "ZH_ASYM_01",
+      "language": "ZH",
+      "category": "asymmetric_clause",
+      "text": "供应商保留权利单方面修改价格且不承担任何责任，客户放弃一切追索权。",
+      "expected_status": "OK",
+      "expected_domain_relevance": "DOMAIN_MATCHED",
+      "expected_non_clean_csis": true,
+      "expected_cpr_alert": true
+    },
+    {
+      "id": "EN_PROSE_HAMLET_01",
+      "language": "EN",
+      "category": "non_contractual_literary_control",
+      "text": "To be, or not to be, that is the question: whether tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles.",
+      "expected_status": "OK",
+      "expected_domain_relevance": "LOW_DOMAIN_SIGNAL",
+      "expected_csis_zone": "Unverified (Non-Contractual / General Prose)"
+    }
+  ]
+}
